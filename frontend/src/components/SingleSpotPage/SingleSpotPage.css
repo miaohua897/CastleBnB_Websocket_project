@@ -1,40 +1,42 @@
-.SpotsContainer{
+.spots-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
  
 }
-.SingleSpotletout{
+.single-spot-outlet{
     width:280px;
-    height:200px;
+    height:250px;
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    border: 3px solid  rgb(243, 96, 96);
-  
+    align-items: center; 
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     margin: 15px;
     padding: 10px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     background-color: white;
 }
-.SingleSpotletout img{
-    margin-top: 25px;
-    width:100px;
-    height: 50px;
+.spot-information-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+    margin:3px;
+}
+.single-spot-outlet img{
     border-radius: 5px;
 }
-.SingleSpotletout p{
+.single-spot-outlet p{
     margin:2px;
 }
-.SingleSpotletout:hover {
+.single-spot-outlet:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-.SpotInfomation{
+.spot-information{
     display: flex;
     flex-direction: row;
     gap:100px;
