@@ -13,10 +13,7 @@ router.get('/:spotId/bookings', requireAuth,async (req, res)=>{
         where:{
             spotId:Number(spotid)
         },
-        // limit:1
-    });
-    // res.json(foundBooking);
-  
+    });  
     if(user.id !== foundBooking.userId){
         res.status(200);
         res.setHeader('Content-Type','application/json');
@@ -74,23 +71,14 @@ router.get('/:spotId/reviews', async (req, res)=>{
 
 
 router.get('/current', async (req, res)=>{
-    
-    // console.log(secretKey);
-    const { user } = req;
-    // console.log(user);
-  
-  
-    if(user){
 
-      
+    const { user } = req;
+    if(user){ 
         const foundSpot = await Spot.findAll({
            where:{
             ownerId: user.id
            }
         });
-    //    const foundReviewsCount = await Review.count({
-    //     where: {spotId:foundSpot.id}
-    //    });
 
     if(!foundSpot[0]) {
         res.setHeader('Content-Type','application/json');
@@ -114,18 +102,12 @@ router.get('/current', async (req, res)=>{
              let newfoundspot = foundSpotEl.toJSON();
              newfoundspot['avgRating'] = foundAverageStars? foundAverageStars.toJSON().avgStarRating :null;
          
-         // console.log(foundAverageStars);
-         
             const foundSpotImg = await SpotImage.findOne({
              where:{
                  spotId: foundSpotEl.id
              }
             });
              
-            console.log(foundSpotImg);
-         //    newfoundspot['previewImage'] = foundSpotImg?foundSpotImg.toJSON().previewImage:null;
-         // console.log(foundSpotImg)
-             // newfoundspot['previewImage'] = null;
              if(foundSpotImg){
                  newfoundspot['previewImage'] =foundSpotImg.toJSON().url;
              }else{
@@ -151,11 +133,9 @@ router.get('/current', async (req, res)=>{
     return res.json(user)
   })
 
-//   DROP SCHEMA snake_case CASCADE;
 router.get('/:spotId', async (req,res)=>{
 
     const spotid = req.params.spotId;
-    console.log('======>',spotid);
 
     const foundSpot = await Spot.findByPk(Number(spotid));
     if(!foundSpot){
@@ -192,9 +172,6 @@ router.get('/:spotId', async (req,res)=>{
     })
     const avgStarRating = foundReview[0].toJSON()
 
-
- 
-
     res.status(200);
     res.setHeader('Content-Type','application/json');
     res.json({
@@ -211,9 +188,6 @@ router.get('/:spotId', async (req,res)=>{
 
 router.get('/', async (req, res)=>{
 
-
-    // const { user } = req;
-    // console.log(user);
     const page = req.query.page || 1;
     const size = req.query.size || 20;
     const offset = (Number(page)-1)*Number(size);
@@ -318,12 +292,9 @@ router.get('/', async (req, res)=>{
             where:{
                 spotId:findSpotel.id
             },
-            // group: ['spotId']
         })
-        // console.log(foundReviews[0].toJSON(). avgRating)
+ 
         findSpotelObj['avgRating'] = foundReviews[0].toJSON().avgRating? foundReviews[0].toJSON().avgRating:null;
-
-        // console.log(findSpotelObj);
 
         const foundSpotImage = await SpotImage.findOne({
             attributes:['url'],
@@ -333,8 +304,7 @@ router.get('/', async (req, res)=>{
         });
 
         findSpotelObj['previewImage'] =foundSpotImage? foundSpotImage.toJSON():null;
-        // findSpotelObj['page'] =page;
-        // findSpotelObj['size'] =size;
+
         results.push(findSpotelObj);
         
     }
@@ -375,9 +345,9 @@ router.post('/:spotId/images',async (req,res)=>{
     const {url,preview} = req.body;
  
    const spotidSplit =spotid.split('');
-//    console.log('=>',spotid,spotidSplit);
+
    spotidSplit.forEach(el=>{
-        console.log(el);
+
         if(!'0123456789'.includes(el)){
             res.status(403);
             res.setHeader('Content-Type','application/json');
@@ -412,13 +382,10 @@ router.post('/:spotId/images',async (req,res)=>{
    return  res.json(newSpotImg)
 
    }   catch (error){
-    // if (!newSpotImg) {
+  
         res.status(404);
         return res.json(error);
-        // return res.json({
-        //     "message": "Spot couldn't be found"
-        // })
-    // }
+ 
    } 
         
 
@@ -473,7 +440,6 @@ router.post('/:spotId/bookings', requireAuth,async (req, res)=>{
         }
         res.status(400);
         res.setHeader('Content-Type','application/json');
-        // return res.json(error.original.code)
         return res.json(
             {
                 "message": "Bad Request", 
@@ -528,8 +494,6 @@ router.post('/:spotId/reviews', async (req,res)=>{
                 });
         }
 
-        console.log('==>',foundSpot);
-
         if(!review || !stars){
             res.status(400);
             res.setHeader('Content-Type','application/json');
@@ -543,7 +507,6 @@ router.post('/:spotId/reviews', async (req,res)=>{
                   }
             )
         }
-    //   console.log("foundSpot.review",foundSpot.review);
 
         foundSpot.Reviews.forEach(el=>{
             if(el.userId===user.id) {
@@ -573,16 +536,10 @@ router.post('/:spotId/reviews', async (req,res)=>{
 router.post('/',requireAuth,async (req, res)=>{
 
     try{
-        const {address, city, state, country, lat, lng, name,description, price} = req.body;
-
-        // console.log(req.user);
-        
+        const {address, city, state, country, lat, lng, name,description, price} = req.body;        
         const newSpot = await Spot.create({
             address, city, state, country, lat, lng, name,description, price,'ownerId':req.user.id
         });
-            
-      
-        // await setTokenCookie(res, safeUser);
         res.status(201);
         res.setHeader('Content-Type','application/json');
         return res.json(newSpot);
@@ -620,10 +577,8 @@ router.put('/:spotId', async (req, res)=>{
             "message":"you haven't log in"
           })
     }
-
      const spodid = req.params.spotId;
     
-   
     try{
         const {address, city, state, country,lat,lng,name,description,price}=req.body;
         const theSpot = await Spot.findByPk(spodid);
