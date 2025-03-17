@@ -1,8 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 import LoginFormPage from '../components/LoginFormPage';
 import SignupFormPage from '../components/SignupFormPage';
+import SingleSpotPage from '../components/SingleSpotPage/SingleSpotPage';
 import Layout from './Layout';
-import Splash from '../components/Splash';
+// import Splash from '../components/Splash';
 import Discussion  from '../components/Discussion';
 
 export const router = createBrowserRouter([
@@ -11,7 +12,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Splash />,
+        element: <SingleSpotPage />,
       },
       {
         path: "login",
