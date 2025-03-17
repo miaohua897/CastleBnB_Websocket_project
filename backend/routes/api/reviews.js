@@ -54,20 +54,8 @@ router.post('/:reviewId/images', async (req, res)=>{
         }
     })
   
-    // if(Number(reviewid)>10){
-    //     res.status(403);
-    //     return res.json(
-    //         {
-    //             "message": "Maximum number of images for this resource was reached"
-    //           }
-    //     )
-    // }
-
     const foundReview = await Review.findByPk(Number(reviewid));
-
-    console.log("foundReview",foundReview);
    
-
     if(!foundReview){
         res.status(404);
         return res.json(
@@ -137,17 +125,11 @@ router.put('/:reviewId', async (req,res)=>{
 
         if(review) foundReview.review = review;
         if(stars) foundReview.stars = stars;
-
-        
-        
         res.status(200);
         return res.json(
             foundReview
         )
 
-    
-    
-   
 });
 
 router.delete('/:reviewId', async (req,res)=>{
@@ -187,9 +169,6 @@ router.delete('/:reviewId', async (req,res)=>{
         return res.json({
             "message": "Review couldn't be found"
           });
-    
-   
-
 })
 
 module.exports = router;

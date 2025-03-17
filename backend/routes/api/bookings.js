@@ -1,16 +1,11 @@
 const express = require('express');
-
 const router = express.Router();
-
 const {Spot,  User,Booking} = require('../../db/models');
-
 const { requireAuth,restoreUser, setTokenCookie } = require('../../utils/auth');
 
 router.get('/current', requireAuth,async (req,res)=>{
-    const {user} = req;
-    // console.log(typeof user.id)
+  const {user} = req;
   const foundbookins = await Booking.findAll({
-     
         include:{
             model:User,
             where:{
@@ -21,7 +16,6 @@ router.get('/current', requireAuth,async (req,res)=>{
   res.status(200);
   res.json({
     user,
-    // foundbookins
     "hello":"world"
   })
 })
@@ -30,8 +24,6 @@ router.put('/:bookingId', requireAuth,async (req, res)=>{
   const bookid = req.params.bookingId;
   const {startDate,endDate} = req.body;
   const foundbook = await Booking.findByPk(Number(bookid));
-  
-
   if(!foundbook){
     res.status(404);
     return res.json(
@@ -40,21 +32,14 @@ router.put('/:bookingId', requireAuth,async (req, res)=>{
       }
     )
   }
-
- 
-
 const enddate = new Date(endDate);
-
- console.log(enddate,foundbook.endDate);
-
   if(foundbook.endDate>enddate ) {
     res.status(403);
     return res.json({
       "message": "Past bookings can't be modified"
     });
   }
-
-  const {user} = req;
+const {user} = req;
   if(user.id !== foundbook.userId){
     return res.json({
       "message":"it's not your booking"
