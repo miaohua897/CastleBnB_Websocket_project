@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { thunkLogout } from "../../redux/session";
+import { thunkLogout,thunkLogin  } from "../../redux/session";
 import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
@@ -38,6 +38,14 @@ function ProfileButton() {
     closeMenu();
   };
 
+  const handleDemoUser=()=>{
+    // e.preventDefault();
+    return dispatch(thunkLogin({
+      "email": "Demo-lition",
+      "password": "password"
+  }))
+  }
+
   return (
     <>
       <button onClick={toggleMenu}>
@@ -65,6 +73,10 @@ function ProfileButton() {
                 onItemClick={closeMenu}
                 modalComponent={<SignupFormModal />}
               />
+               <button 
+              className='DemoUser'
+              onClick={handleDemoUser}
+              >Log in as Demo User</button>
             </>
           )}
         </ul>
