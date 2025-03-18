@@ -6,6 +6,7 @@ import Layout from './Layout';
 import Discussion  from '../components/Discussion';
 import CreateASpotPage from '../components/CreateASpot/CreateASpotPage';
 import SignleSpotDetail from '../components/SignleSpotDetail';
+import UpdateASpotPage from '../components/UpdateASpotPage';
 
 export const router = createBrowserRouter([
   {
@@ -34,7 +35,11 @@ export const router = createBrowserRouter([
       {
         path: '/spots/:spotId',
         element: <SignleSpotDetail />
-      } ,
+      },
+      {
+        path: '/spots/:id/edit',
+        element: <UpdateASpotPage />
+      },
     ],
   },
 
