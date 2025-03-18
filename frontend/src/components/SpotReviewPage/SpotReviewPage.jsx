@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {thunkGetSingleSpotReview} from '../../redux/spot';
 import CreateAReview from '../CreateAReview';
 import OpenModalButton from '../OpenModalButton';
+import UpdateReviewPage from '../UpdateReviewPage';
 import './SpotReviewPage.css';
 function SpotReviewPage({spotId}){
     const sessionUser = useSelector(state => state.session.user);
@@ -61,11 +62,17 @@ function SpotReviewPage({spotId}){
                     {
                         sessionUser? el.userId===sessionUser.id?
                         <div className="update-delete-container">
-                        {/* <UpdateAReviewButton reviewid={el.id} spotId={spotId} theReview={{
-                            "stars":el.stars,
-                           "review":el.review
-                        }}/>
-                        <DeleteAReviewButton reviewid={el.id} spotId={spotId}/> */}
+                             <OpenModalButton
+                            buttonText="Update A Review"
+                            className='update-spot-review-button'
+                            modalComponent={
+                                <UpdateReviewPage reviewid={el.id} spotId={spotId} theReview={{
+                                    "stars":el.stars,
+                                   "review":el.review
+                                }}/>
+                            }/>
+                     
+                        {/* <DeleteAReviewButton reviewid={el.id} spotId={spotId}/> */}
                        </div>
                             :null
                             :null

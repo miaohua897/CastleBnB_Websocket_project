@@ -4,10 +4,12 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {thunkCreateAReview,thunkGetSingleSpotDetail} from '../../redux/spot';
 import {  useNavigate } from 'react-router-dom';
+import { useModal } from "../../context/Modal";
 function CreateAReview({spotId}){
     
     const dispatch=useDispatch();
     const navigate=useNavigate();
+    const { closeModal } = useModal();
     const [rating,setRating] = useState(0);
     const [newreview,setNewreview]=useState('');
     const [hovered, setHovered] = useState(false);
@@ -112,6 +114,7 @@ function CreateAReview({spotId}){
        
         navigate(`/spots/${spotId}`);
         dispatch(thunkGetSingleSpotDetail(spotId));
+        closeModal();
         
         // window.location.reload();
     }
@@ -120,17 +123,17 @@ function CreateAReview({spotId}){
   return (
     // <p style={{color:"white"}}>hello</p>
     <div >
-        <form className="createReviewContainer"
+        <form className="create-review-container"
         onSubmit={handleSubmit}
         >
         <button 
                 type="button" 
-                id="closeCreateAReview"
-                // onClick={createReviewonClose} 
+                id="close-create-review"
+                onClick={()=>closeModal()} 
               >
                 ✖️
         </button>
-        <div className="CreateAReviewFormContainer">
+        <div className="create-review-form-container">
         <label >
                   <p>How was your stay?</p> 
                   <input type="text" 
@@ -138,10 +141,10 @@ function CreateAReview({spotId}){
                   onChange={(e)=>setNewreview(e.target.value)}
                   placeholder="Leave your review here..."
                   required 
-                  id='reviewInputContainer'
+                  id='review-input-container'
                   />
         </label>
-        <ul className='starContainer'>
+        <ul className='star-container'>
 
         <div 
         onMouseEnter={handleMouseEnterOne}
@@ -202,7 +205,7 @@ function CreateAReview({spotId}){
         <a style={{paddingLeft:15}}>Stars</a>
         </ul>
         <button 
-        className={rating===0||newreview.length<10?'submitYourReviewButtondisable':'submitYourReviewButton'}
+        className={rating===0||newreview.length<10?'submit-review-button-disable':'submit-review-button'}
         type="submit"
         disabled={rating===0||newreview.length<10}
         >Submit Your Review</button>

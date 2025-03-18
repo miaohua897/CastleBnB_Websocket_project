@@ -3,44 +3,30 @@ body{
 }
 
 
-  .createReviewContainer {
-    background-color: white;
+  .create-review-container{
     padding: 20px;
-    border-radius: 8px;
-    width: 400px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    max-height: 80vh;
-    overflow-y: auto; 
   }
 
-  .starContainer{
+  .star-container{
     display: flex;
     flex-direction: row;
   }
-  #reviewInputContainer{
-    width: 300px;
+  #review-input-container{
+    width: 400px;
     height: 100px;
   }
-  .CreateAReviewFormContainer{
+  .create-review-form-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
   }
-  .createAreviewButton{
-    width: 200px;
-    height: 30px;
-    border: none;
-    background-color: rgb(243, 96, 96);
-    border-radius: 10px;
-    margin: 5px;
-  }
-  #closeCreateAReview{
+ 
+  #close-create-review{
    background-color: transparent;
    border: none;
   }
-  .submitYourReviewButton{
+  .submit-review-button{
     width: 200px;
     height: 30px;
     border: none;
@@ -49,7 +35,7 @@ body{
     margin: 5px;
     color:white;
 }
-.submitYourReviewButtondisable{
+.submit-review-button-disable{
   width: 200px;
   height: 30px;
   border: none;
