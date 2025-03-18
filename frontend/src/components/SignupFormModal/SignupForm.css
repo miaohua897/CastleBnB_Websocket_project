@@ -1,0 +1,33 @@
+.signup-container{
+    width: 300px;
+    padding: 10px;
+}
+.signup-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: flex-start;  */
+    margin:10px;
+    padding:5px;
+    gap:5px;  
+}
+.submit-sinup-button-disable{
+    border: none;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.submit-sinup-button{
+    border:none;
+    margin-bottom: 10px;
+    background-color: darkcyan;
+    color: aliceblue;
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+#signup-input{
+    width:250px;
+}
