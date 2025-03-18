@@ -51,12 +51,12 @@ const updateReview=(data)=>{
     }
 }
 
-// const removeSpot = (spotid) => {
-//     return {
-//       type: REMOVE_SPOT,
-//       payload:spotid
-//     };
-//   };
+const removeSpot = (spotid) => {
+    return {
+      type: REMOVE_SPOT,
+      payload:spotid
+    };
+  };
 
 // const removeReview = (reviewid) => {
 //     return {
@@ -113,10 +113,11 @@ export const thunkUpdateAReview=(data)=>async(dispatch)=>{
     }
 }
 
-export const thunkDeleteASpot = (spotid) => async () => {
+export const thunkDeleteASpot = (spotid) => async (dispatch) => {
     const response = await csrfFetch(`/api/spots/${spotid}`, {
       method: 'DELETE'
     });
+    dispatch(removeSpot(spotid))
     return response;
 };
 
