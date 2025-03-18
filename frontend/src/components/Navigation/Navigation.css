@@ -7,8 +7,15 @@
     border-radius: 4px;
     margin-left: -80px;
     /* margin-top:180px;  */
-    padding: 5px;
+    padding: 10px;
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    
+    
 }
 .nav-bar{
     display:flex;

@@ -3,6 +3,7 @@ import { csrfFetch } from './csrf';
 const LOAD_CURRENT_SPOT = 'spot/loadCurrentSpot';
 const LOAD_REVIEW ='spot/loadReview';
 const LOAD_SPOT ='spot/loadSpot';
+const LOAD_SPOT_DETAIL ='spot/loadSpotDetail';
 const LOAD_SPOT_REVIEW ='spot/loadSpotReview';
 const UPDATE_REVIEW ='spot/updateReview';
 const REMOVE_SPOT = 'spot/removeSpot';
@@ -18,6 +19,13 @@ const loadCurrentSpot=(data)=>{
 const loadSpot=(data)=>{
     return {
         type:LOAD_SPOT,
+        payload:data
+    }
+}
+
+const loadSpotDetail=(data)=>{
+    return{
+        type:LOAD_SPOT_DETAIL,
         payload:data
     }
 }
@@ -268,11 +276,11 @@ export const thunkCreateSpot=(data)=> async (dispatch)=>{
 }
 
 export const thunkGetSingleSpotDetail=(spotId)=> async (dispatch)=>{
-    const res = await fetch(`/api/spots/${spotId}`);
+    const res = await csrfFetch(`/api/spots/${spotId}`);
     if(res.ok){
         const data = await res.json();
         const newdata = data;
-        dispatch(loadSpot(newdata));
+        dispatch(loadSpotDetail(newdata));
         return res;
     }
 }
@@ -295,10 +303,12 @@ export const thunkGetSingleSpotReview=(spotId)=> async (dispatch)=>{
     
 }
 
-const spotReducer = (state={currentSpot:[],reviews:{Reviews:[]}},action)=>{
+const spotReducer = (state={currentSpot:[],reviews:{Reviews:[]},spotDetail:{}},action)=>{
     switch(action.type){
         case LOAD_SPOT :
             return {...state,...action.payload};
+        case LOAD_SPOT_DETAIL:
+            return {...state,'spotDetail':action.payload}
         case LOAD_SPOT_REVIEW:
             return {...state,'reviews':action.payload};
         case  LOAD_REVIEW :

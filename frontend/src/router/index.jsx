@@ -5,6 +5,7 @@ import SingleSpotPage from '../components/SingleSpotPage/SingleSpotPage';
 import Layout from './Layout';
 import Discussion  from '../components/Discussion';
 import CreateASpotPage from '../components/CreateASpot/CreateASpotPage';
+import SignleSpotDetail from '../components/SignleSpotDetail';
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
         path:'spots/new',
         element: <CreateASpotPage />
       },
+      {
+        path: '/spots/:spotId',
+        element: <SignleSpotDetail />
+      } ,
     ],
   },
 
