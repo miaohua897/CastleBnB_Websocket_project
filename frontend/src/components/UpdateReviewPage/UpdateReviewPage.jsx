@@ -4,11 +4,13 @@ import { useDispatch } from 'react-redux';
 import {  useNavigate } from 'react-router-dom';
 import { useModal } from "../../context/Modal";
 import {thunkUpdateAReview} from '../../redux/spot';
+import { useSelector } from 'react-redux';
 import './UpdateReviewPage.css';
 function UpdateReviewPage({reviewid,spotId,theReview}){
     const dispatch=useDispatch();
     const navigate=useNavigate();
-     const { closeModal } = useModal();
+    const { closeModal } = useModal();
+    const sessionUser = useSelector(state => state.session.user);
     const [rating,setRating] = useState(0);
     const [newreview,setNewreview]=useState('');
     const [hovered, setHovered] = useState(false);
@@ -110,7 +112,7 @@ function UpdateReviewPage({reviewid,spotId,theReview}){
     const handleSubmit=(e)=>{
         e.preventDefault();
         dispatch(thunkUpdateAReview({
-            "stars":rating,'review':newreview,spotId,reviewid
+            "stars":rating,'review':newreview,spotId,reviewid,'User':sessionUser
         }));
      
        

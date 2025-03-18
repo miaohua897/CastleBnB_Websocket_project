@@ -1,0 +1,33 @@
+
+.delete-review-modal{
+    padding:20px;
+}
+.delete-review-confirm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    gap: 5px;
+}
+.delete-review-confirm-button{
+    width: 200px;
+    height: 30px;
+    border: none;
+    background-color: rgb(243, 96, 96);
+    border-radius: 10px;
+    margin: 5px;
+}
+.cancel-delete-review-confirm-button{
+    width: 200px;
+    height: 30px;
+    border: none;
+    background-color: darkgray;
+    border-radius: 10px;
+    margin: 5px;
+}
+#close-delete-review-button{
+    border: none;
+    background-color: transparent;
+}
+

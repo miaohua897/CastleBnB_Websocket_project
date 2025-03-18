@@ -4,6 +4,7 @@ import {thunkGetSingleSpotReview} from '../../redux/spot';
 import CreateAReview from '../CreateAReview';
 import OpenModalButton from '../OpenModalButton';
 import UpdateReviewPage from '../UpdateReviewPage';
+import DeleteReviewPage from '../DeleteReviewPage';
 import './SpotReviewPage.css';
 function SpotReviewPage({spotId}){
     const sessionUser = useSelector(state => state.session.user);
@@ -55,8 +56,8 @@ function SpotReviewPage({spotId}){
             thereviewReverse(thereview).map((el,index)=>{
                 return (
                     <div key={index} className='review-container'>
-                     <div >
-                        {el.User? <p id='review-name'>{el.User.firstName}</p>:null}
+                     <div className="review-card">
+                        <p id='review-name'>{el.User.username+' says: '}</p>
                         <p id='review-review'>{el.review}</p>
                     </div>
                     {
@@ -71,8 +72,16 @@ function SpotReviewPage({spotId}){
                                    "review":el.review
                                 }}/>
                             }/>
+
+
+                             <OpenModalButton
+                            buttonText="Delete A Review"
+                            className='update-spot-review-button'
+                            modalComponent={
+                                <DeleteReviewPage reviewid={el.id} spotId={spotId} />
+                            }/>
                      
-                        {/* <DeleteAReviewButton reviewid={el.id} spotId={spotId}/> */}
+                     
                        </div>
                             :null
                             :null
