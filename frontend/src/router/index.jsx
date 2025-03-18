@@ -3,8 +3,8 @@ import LoginFormPage from '../components/LoginFormPage';
 import SignupFormPage from '../components/SignupFormPage';
 import SingleSpotPage from '../components/SingleSpotPage/SingleSpotPage';
 import Layout from './Layout';
-// import Splash from '../components/Splash';
 import Discussion  from '../components/Discussion';
+import CreateASpotPage from '../components/CreateASpot/CreateASpotPage';
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +25,10 @@ export const router = createBrowserRouter([
       ,{
         path: "discussion",
         element: <Discussion />,
+      },
+      {
+        path:'spots/new',
+        element: <CreateASpotPage />
       },
     ],
   },

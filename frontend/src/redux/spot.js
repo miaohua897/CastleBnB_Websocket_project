@@ -141,7 +141,7 @@ export const thunkCreateAReview=(data)=> async (dispatch)=>{
       }   
 }
 
-export const updateSpot=(data,spotId)=> async (dispatch)=>{
+export const thunkUpdateSpot=(data,spotId)=> async (dispatch)=>{
     const {
         name,
         address,
@@ -179,7 +179,7 @@ export const updateSpot=(data,spotId)=> async (dispatch)=>{
     }
 }
 
-export const createSpot=(data)=> async (dispatch)=>{
+export const thunkCreateSpot=(data)=> async (dispatch)=>{
     const {
         name,
         address,
@@ -267,7 +267,7 @@ export const createSpot=(data)=> async (dispatch)=>{
 
 }
 
-export const getSingleSpotDetail=(spotId)=> async (dispatch)=>{
+export const thunkGetSingleSpotDetail=(spotId)=> async (dispatch)=>{
     const res = await fetch(`/api/spots/${spotId}`);
     if(res.ok){
         const data = await res.json();
@@ -276,7 +276,7 @@ export const getSingleSpotDetail=(spotId)=> async (dispatch)=>{
         return res;
     }
 }
-export const getSingleSpotReview=(spotId)=> async (dispatch)=>{
+export const thunkGetSingleSpotReview=(spotId)=> async (dispatch)=>{
     try{
         const res = await fetch(`/api/spots/${spotId}/reviews`);
         if(res.ok){
