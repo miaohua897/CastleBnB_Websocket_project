@@ -7,6 +7,7 @@ import Discussion  from '../components/Discussion';
 import CreateASpotPage from '../components/CreateASpot/CreateASpotPage';
 import SignleSpotDetail from '../components/SignleSpotDetail';
 import UpdateASpotPage from '../components/UpdateASpotPage';
+import ManageSpots from '../components/ManageSpots';
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
         path: '/spots/:id/edit',
         element: <UpdateASpotPage />
       },
+      {
+        path:'/spots/current',
+        element: <ManageSpots />
+      }
     ],
   },
 
