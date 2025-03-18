@@ -58,12 +58,12 @@ const removeSpot = (spotid) => {
     };
   };
 
-// const removeReview = (reviewid) => {
-//     return {
-//       type: REMOVE_Review,
-//       payload:reviewid
-//     };
-//   };
+const removeReview = (reviewid) => {
+    return {
+      type: REMOVE_Review,
+      payload:reviewid
+    };
+  };
 
 export const thunkGetSpot=()=> async (dispatch)=>{
     const res = await fetch('/api/spots');
@@ -121,10 +121,11 @@ export const thunkDeleteASpot = (spotid) => async (dispatch) => {
     return response;
 };
 
-export const thunkDeleteAReview = (reviewid) => async () => {
+export const thunkDeleteAReview = (reviewid) => async (dispatch) => {
     const response = await csrfFetch(`/api/reviews/${reviewid}`, {
       method: 'DELETE'
     });
+    dispatch(removeReview(reviewid))
     return response;   
 };
 

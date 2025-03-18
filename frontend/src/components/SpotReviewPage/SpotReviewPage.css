@@ -21,6 +21,8 @@
 .update-delete-container{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    gap:20px;
 }
 .review-container{
     border-bottom: 0.5px dashed rgb(165, 178, 177);
