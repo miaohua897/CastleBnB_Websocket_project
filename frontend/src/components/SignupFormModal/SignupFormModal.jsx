@@ -8,92 +8,127 @@ function SignupFormModal() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
   const { closeModal } = useModal();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (password !== confirmPassword) {
-      return setErrors({
-        confirmPassword:
-          "Confirm Password field must be the same as the Password field",
-      });
+    if (password === confirmPassword) {
+      setErrors({});
+      return dispatch(
+        thunkSignup({
+          email,
+          username,
+          firstName,
+          lastName,
+          password
+        })
+      )
+        .then(closeModal)
+        .catch(async (res) => {
+          const data = await res.json();
+          if (data?.errors) {
+            setErrors(data.errors);
+          }
+        });
     }
-
-    const serverResponse = await dispatch(
-      thunkSignup({
-        email,
-        username,
-        password,
-      })
-    );
-
-    if (serverResponse) {
-      setErrors(serverResponse);
-    } else {
-      closeModal();
-    }
+    return setErrors({
+      confirmPassword: "Confirm Password field must be the same as the Password field"
+    });
   };
 
   return (
-    <div className="signup-container">
+    <div className='signup-container'>
       <h1>Sign Up</h1>
-      {errors.server && <p>{errors.server}</p>}
-      <form onSubmit={handleSubmit} className="signup-form-container">
-        <label>
+      <form onSubmit={handleSubmit} >
+      <div className='signup-form-container'>
+      <label>
           Email:
           <input
             type="text"
             value={email}
-            id='signup-input'
+            placeholder="Enter your Email"
             onChange={(e) => setEmail(e.target.value)}
+            className='signup-input'
             required
           />
         </label>
         {errors.email && <p>{errors.email}</p>}
         <label>
-          Username:
+          Username
           <input
             type="text"
             value={username}
-            id='signup-input'
+            placeholder="Enter your Username"
             onChange={(e) => setUsername(e.target.value)}
+            className='signup-input'
             required
           />
         </label>
         {errors.username && <p>{errors.username}</p>}
         <label>
-          Password:
+          First Name
+          <input
+            type="text"
+            value={firstName}
+             placeholder="Enter your First Name"
+            onChange={(e) => setFirstName(e.target.value)}
+            className='signup-input'
+            required
+          />
+        </label>
+        {errors.firstName && <p>{errors.firstName}</p>}
+        <label>
+          Last Name
+          <input
+            type="text"
+            value={lastName}
+             placeholder="Enter your Last Name"
+            onChange={(e) => setLastName(e.target.value)}
+            className='signup-input'
+            required
+          />
+        </label>
+        {errors.lastName && <p>{errors.lastName}</p>}
+        <label>
+          Password
           <input
             type="password"
             value={password}
-            id='signup-input'
+             placeholder="Enter your Password"
             onChange={(e) => setPassword(e.target.value)}
+            className='signup-input'
             required
           />
         </label>
         {errors.password && <p>{errors.password}</p>}
         <label>
-          Confirm Password:
+          Confirm Password
           <input
             type="password"
             value={confirmPassword}
-             id='signup-input'
+             placeholder="Comfirm your Password"
             onChange={(e) => setConfirmPassword(e.target.value)}
+            className='signup-input'
             required
           />
         </label>
-        {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
+        {errors.confirmPassword && (
+          <p>{errors.confirmPassword}</p>
+        )}
         <button 
-        className={email.length===0||username.length<4||password.length<6||confirmPassword.length<6?
+        className={email.length===0||username.length<4||firstName.length===0||lastName.length===0||password.length<6||confirmPassword.length<6?
           'submit-sinup-button-disable':'submit-sinup-button'
         }
         type="submit"
-        disabled={email.length===0||username.length<4||password.length<6||confirmPassword.length<6}
+        disabled={email.length===0||username.length<4||firstName.length===0||lastName.length===0||password.length<6||confirmPassword.length<6}
         >Sign Up</button>
+      </div>
+      
       </form>
     </div>
   );

@@ -3,8 +3,11 @@ import LoginFormPage from '../components/LoginFormPage';
 import SignupFormPage from '../components/SignupFormPage';
 import SingleSpotPage from '../components/SingleSpotPage/SingleSpotPage';
 import Layout from './Layout';
-// import Splash from '../components/Splash';
 import Discussion  from '../components/Discussion';
+import CreateASpotPage from '../components/CreateASpot/CreateASpotPage';
+import SignleSpotDetail from '../components/SignleSpotDetail';
+import UpdateASpotPage from '../components/UpdateASpotPage';
+import ManageSpots from '../components/ManageSpots';
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +29,22 @@ export const router = createBrowserRouter([
         path: "discussion",
         element: <Discussion />,
       },
+      {
+        path:'spots/new',
+        element: <CreateASpotPage />
+      },
+      {
+        path: '/spots/:spotId',
+        element: <SignleSpotDetail />
+      },
+      {
+        path: '/spots/:id/edit',
+        element: <UpdateASpotPage />
+      },
+      {
+        path:'/spots/current',
+        element: <ManageSpots />
+      }
     ],
   },
 

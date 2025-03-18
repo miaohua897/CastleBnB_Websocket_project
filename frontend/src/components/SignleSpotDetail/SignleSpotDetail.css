@@ -1,0 +1,74 @@
+.single-spot-detail-page{
+    margin:10px;
+    padding-left: 20px;
+}
+.spot-image{
+    display: grid;
+    grid-template-columns:  0.6fr 0.4fr;
+    grid-template-areas: 'left' 'right';
+    gap:10px;
+    margin: 20px;
+    justify-items: center;
+    align-items: center;
+}
+.left{
+    grid-area:main-spot-image;
+}
+.right{
+    grid-area:nopreview-image-button
+}
+.noPreview-images{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+.nopreview-image-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;        
+    gap:5px;
+}
+#noPreview-images-button{
+    width: 200px;
+    height: 30px;
+    background-color: red;
+    color: aliceblue;
+    font-weight: bolder;
+    border-radius: 10px;
+    border: 1px solid darkred;
+}
+.main-spot-image{
+    width: 90%;
+    height:auto;
+    border-radius: 3px;
+    box-shadow:  0 -5px 15px rgba(0, 0, 0, 0.3),  
+    0 5px 15px rgba(0, 0, 0, 0.3),  
+    -5px 0 15px rgba(0, 0, 0, 0.3),  
+    5px 0 15px rgba(0, 0, 0, 0.3);   
+    
+}
+.price-review-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-left: 2px;
+}
+#noPreview-images{
+    border-radius: 3px;
+}
+.owner-name{
+    font-size: 28px;
+}
+.spot-location{
+    font-size: 14px;
+}
+.spot-description{
+    font-size:16px;
+}

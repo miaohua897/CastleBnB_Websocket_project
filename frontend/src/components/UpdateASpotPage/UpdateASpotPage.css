@@ -1,0 +1,59 @@
+.back-manage-spot-button{
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    font-weight: bolder;
+    font-size: large;
+}
+.update-spot{
+    background-color: darkgray;
+    border-radius: 5%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.update-spot-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.updateUrl{
+    display: flex;
+    flex-direction: column;
+}
+.updateUrlInput{
+    width: 95%;
+}
+.update-spot-button{
+    position: relative;
+    left:40%;
+    border: none;
+    background-color:  rgb(243, 96, 96);
+    border-radius: 3px;
+    width: 160px;
+    height: 40px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+ 
+}
+.city-state-update{
+    width:90%;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
+.update-spot-form-container{
+    width:90%;
+}
+.update-spot-input{
+    width:95%;
+    margin-left: 10px;
+}
+.updat-spot-description-input{
+    width:95%;
+    height:100px;
+}
+
