@@ -1,14 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkLogout,thunkLogin  } from "../../redux/session";
+import {thunkGetCurrentSpot} from '../../redux/spot';
 import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
+import { useNavigate } from "react-router-dom";
 
 function ProfileButton() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
-  const user = useSelector((store) => store.session.user);
+  const user = useSelector(state => state.session.user);
   const ulRef = useRef();
 
   const toggleMenu = (e) => {
@@ -46,9 +49,20 @@ function ProfileButton() {
   }))
   }
 
+  const manageYourSpotsHanlder=(e)=>{
+    e.preventDefault();
+    dispatch(thunkGetCurrentSpot());
+    navigate('/spots/current');
+  }
+  const manageYourReviewsHanlder=(e)=>{
+    e.preventDefault();
+    // dispatch(getCurrentReviews());
+    navigate('/reviews/current');
+  }
+  // const profileDropdwonClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
   return (
     <>
-      <button onClick={toggleMenu}>
+      <button onClick={toggleMenu} className ='profile-button'> 
         <i className="fas fa-user-circle" />
       </button>
       {showMenu && (
@@ -57,8 +71,18 @@ function ProfileButton() {
             <>
               <li>{user.username}</li>
               <li>{user.email}</li>
+              <li >
+              <button onClick={manageYourSpotsHanlder}
+              className='profile-dropdown-button'
+              >manage spots</button>
+              </li>
+              <li >
+                <button onClick={manageYourReviewsHanlder}
+                className='profile-dropdown-button'
+                >manage reviews</button>
+              </li>
               <li>
-                <button onClick={logout}>Log Out</button>
+                <button onClick={logout} className='profile-dropdown-button'  >Log Out</button>
               </li>
             </>
           ) : (

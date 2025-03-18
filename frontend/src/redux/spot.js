@@ -43,19 +43,19 @@ const updateReview=(data)=>{
     }
 }
 
-const removeSpot = (spotid) => {
-    return {
-      type: REMOVE_SPOT,
-      payload:spotid
-    };
-  };
+// const removeSpot = (spotid) => {
+//     return {
+//       type: REMOVE_SPOT,
+//       payload:spotid
+//     };
+//   };
 
-const removeReview = (reviewid) => {
-    return {
-      type: REMOVE_Review,
-      payload:reviewid
-    };
-  };
+// const removeReview = (reviewid) => {
+//     return {
+//       type: REMOVE_Review,
+//       payload:reviewid
+//     };
+//   };
 
 export const thunkGetSpot=()=> async (dispatch)=>{
     const res = await fetch('/api/spots');
