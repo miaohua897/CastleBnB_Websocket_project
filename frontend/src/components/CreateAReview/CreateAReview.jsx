@@ -2,6 +2,7 @@ import './CreateAReview.css';
 import { FaStar } from 'react-icons/fa6';
 import { useState } from 'react'; 
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {thunkCreateAReview,thunkGetSingleSpotDetail} from '../../redux/spot';
 import {  useNavigate } from 'react-router-dom';
 import { useModal } from "../../context/Modal";
@@ -10,6 +11,7 @@ function CreateAReview({spotId}){
     const dispatch=useDispatch();
     const navigate=useNavigate();
     const { closeModal } = useModal();
+    const sessionUser = useSelector(state => state.session.user);
     const [rating,setRating] = useState(0);
     const [newreview,setNewreview]=useState('');
     const [hovered, setHovered] = useState(false);
@@ -108,7 +110,7 @@ function CreateAReview({spotId}){
         e.preventDefault();
         // console.log('rating',rating,newreview,spotId);
         dispatch(thunkCreateAReview({
-            "stars":rating,'review':newreview,spotId
+            "stars":rating,'review':newreview,spotId,'User':sessionUser 
         }));
       
        

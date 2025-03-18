@@ -56,8 +56,8 @@ function SpotReviewPage({spotId}){
             thereviewReverse(thereview).map((el,index)=>{
                 return (
                     <div key={index} className='review-container'>
-                     <div >
-                        {el.User? <p id='review-name'>{el.User.firstName}</p>:null}
+                     <div className="review-card">
+                        <p id='review-name'>{el.User.username+' says: '}</p>
                         <p id='review-review'>{el.review}</p>
                     </div>
                     {

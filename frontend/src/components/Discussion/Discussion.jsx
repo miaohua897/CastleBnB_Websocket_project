@@ -13,6 +13,9 @@ function Discussion() {
         const socket = io('https://castlebnb-websocket-project.onrender.com', {
           transports: ["websocket"],
         });
+        // const socket = io('http://localhost:8000', {
+        //   transports: ["websocket"],
+        // });
         useEffect(() => {
           connectSocket();
         }, []);

@@ -93,7 +93,7 @@ export const thunkGetCurrentSpot=()=> async (dispatch)=>{
 
 
 export const thunkUpdateAReview=(data)=>async(dispatch)=>{
-    const {reviewid,review,stars}=data;
+    const {reviewid,review,stars,User}=data;
     try{
         const res =  await csrfFetch(`/api/reviews/${reviewid}`, {
             method: "PUT",
@@ -105,7 +105,7 @@ export const thunkUpdateAReview=(data)=>async(dispatch)=>{
         if(res.ok){
             const datares = await res.json();
             console.log('datares',datares);
-            dispatch(updateReview(datares));
+            dispatch(updateReview({datares,User}));
             return datares;
         }
     }catch(e){
@@ -130,7 +130,7 @@ export const thunkDeleteAReview = (reviewid) => async (dispatch) => {
 };
 
 export const thunkCreateAReview=(data)=> async (dispatch)=>{
-    const {spotId,review,stars} = data;
+    const {spotId,review,stars,User} = data;
       try{
         const response = await csrfFetch(`/api/spots/${spotId}/reviews`, {
             method: "POST",
@@ -143,7 +143,7 @@ export const thunkCreateAReview=(data)=> async (dispatch)=>{
             const data = await response.json();
             const newdata = data;
         
-            dispatch(loadReview(newdata));
+            dispatch(loadReview({...newdata,User}));
             return newdata;
         }
       }catch(error){
