@@ -39,53 +39,63 @@ function SignupFormModal() {
   };
 
   return (
-    <>
+    <div className="signup-container">
       <h1>Sign Up</h1>
       {errors.server && <p>{errors.server}</p>}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="signup-form-container">
         <label>
-          Email
+          Email:
           <input
             type="text"
             value={email}
+            id='signup-input'
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </label>
         {errors.email && <p>{errors.email}</p>}
         <label>
-          Username
+          Username:
           <input
             type="text"
             value={username}
+            id='signup-input'
             onChange={(e) => setUsername(e.target.value)}
             required
           />
         </label>
         {errors.username && <p>{errors.username}</p>}
         <label>
-          Password
+          Password:
           <input
             type="password"
             value={password}
+            id='signup-input'
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </label>
         {errors.password && <p>{errors.password}</p>}
         <label>
-          Confirm Password
+          Confirm Password:
           <input
             type="password"
             value={confirmPassword}
+             id='signup-input'
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
         </label>
         {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
-        <button type="submit">Sign Up</button>
+        <button 
+        className={email.length===0||username.length<4||password.length<6||confirmPassword.length<6?
+          'submit-sinup-button-disable':'submit-sinup-button'
+        }
+        type="submit"
+        disabled={email.length===0||username.length<4||password.length<6||confirmPassword.length<6}
+        >Sign Up</button>
       </form>
-    </>
+    </div>
   );
 }
 

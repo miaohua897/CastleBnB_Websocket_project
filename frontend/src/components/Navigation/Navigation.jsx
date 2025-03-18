@@ -1,17 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
+import { useSelector } from "react-redux";
 // import { useSelector } from "react-redux";
 
 function Navigation() {
-  return (
-    <ul>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
+  const navigate = useNavigate();
+  const sessionUser = useSelector(state=>state.session.user);
 
+  return (
+    <ul className="nav-bar">
+      <li className="homepage-logo">
+        <NavLink id='home-icon' to="/">CastleBnB</NavLink>
+      </li>
+        {
+          sessionUser?
+          <div className="menu-items">
+            <li></li>
+            <button  className='discussion-nav-button'  onClick={()=>navigate('/discussion')}>Discussion</button>
+          </div>:null
+        }
       <li>
-        <ProfileButton />
+        <ProfileButton className='profile-buttons-container' />
       </li>
     </ul>
   );
