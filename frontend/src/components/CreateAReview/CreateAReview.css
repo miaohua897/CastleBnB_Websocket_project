@@ -1,0 +1,60 @@
+body{
+  color:white;
+}
+
+
+  .createReviewContainer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto; 
+  }
+
+  .starContainer{
+    display: flex;
+    flex-direction: row;
+  }
+  #reviewInputContainer{
+    width: 300px;
+    height: 100px;
+  }
+  .CreateAReviewFormContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .createAreviewButton{
+    width: 200px;
+    height: 30px;
+    border: none;
+    background-color: rgb(243, 96, 96);
+    border-radius: 10px;
+    margin: 5px;
+  }
+  #closeCreateAReview{
+   background-color: transparent;
+   border: none;
+  }
+  .submitYourReviewButton{
+    width: 200px;
+    height: 30px;
+    border: none;
+    background-color:  rgb(243, 96, 96);
+    border-radius: 10px;
+    margin: 5px;
+    color:white;
+}
+.submitYourReviewButtondisable{
+  width: 200px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  border-radius: 10px;
+  margin: 5px;
+  color:lightgray;
+}
