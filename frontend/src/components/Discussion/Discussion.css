@@ -3,14 +3,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid darkgray;
     margin: 10px;
     gap:10px;
-
+    border:1px solid darkgray;
+    box-shadow: 0px 3px 10px rgb(103, 103, 103,0.5);
+    border-radius: 10px;
 }
 .submit-button{
+    box-shadow: 0px 3px 6px black;
     border: none;
-    background-color: transparent;
+    background-color: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .send-content-container{
     display: flex;
@@ -19,6 +28,10 @@
     align-items: center;
 }
 .send-content-container input{
-    width: 600px;
-    height: 200px;
+    /* width: 600px; */
+    width:97%;
+    height: 150px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgb(103, 103, 103,0.5);
 }

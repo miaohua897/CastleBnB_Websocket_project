@@ -50,10 +50,10 @@ function Discussion() {
                     name='content'
                     onChange={handleInput}
                     className="input-field"
-                    placeholder="Message"
+                    placeholder="I want to say ..."
                   />    
               <button className="submit-button" onClick={sendMessages}>
-                Submit
+                share my thoughs
               </button>
           </div>
           {messages.length > 0 ? 
@@ -68,7 +68,7 @@ function Discussion() {
                         </div>    
                     </div>)})       
                         : (
-                          <p>post your first message</p>
+                          <h2>post your first message</h2>
                         )}
          </>
              );
