@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {thunkGetSingleSpotDetail} from  '../../redux/spot';
 import { FaStar } from 'react-icons/fa6'; 
+import SpotReviewPage from '../SpotReviewPage';
 import './SignleSpotDetail.css';
 
 
@@ -61,7 +62,7 @@ function SignleSpotDetail(){
                     {thespot.avgStarRating?
                       (Math.round(thespot.avgStarRating * 10) / 10===5||Math.round(thespot.avgStarRating * 10) / 10===4||Math.round(thespot.avgStarRating* 10) / 10===3||Math.round(thespot.avgStarRating * 10) / 10===2||Math.round(thespot.avgStarRating * 10) / 10===1? `${Math.round(thespot.avgStarRating * 10) / 10}.0`:Math.round(thespot.avgStarRating * 10) / 10)
                       :"New"} {"             "} {thespot.numReviews===1? `● ${thespot.numReviews} review`:thespot.numReviews===0?null: `● ${thespot.numReviews} reviews`}</p>
-        
+                 <SpotReviewPage spotId={spotId}/>
          </div>)
  
 }

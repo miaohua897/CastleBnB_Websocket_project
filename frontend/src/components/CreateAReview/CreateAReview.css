@@ -1,0 +1,46 @@
+body{
+  color:white;
+}
+
+
+  .create-review-container{
+    padding: 20px;
+  }
+
+  .star-container{
+    display: flex;
+    flex-direction: row;
+  }
+  #review-input-container{
+    width: 400px;
+    height: 100px;
+  }
+  .create-review-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+  }
+ 
+  #close-create-review{
+   background-color: transparent;
+   border: none;
+  }
+  .submit-review-button{
+    width: 200px;
+    height: 30px;
+    border: none;
+    background-color:  rgb(243, 96, 96);
+    border-radius: 10px;
+    margin: 5px;
+    color:white;
+}
+.submit-review-button-disable{
+  width: 200px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  border-radius: 10px;
+  margin: 5px;
+  color:lightgray;
+}

@@ -1,0 +1,38 @@
+
+.update-review-container{
+    padding:20px;
+}
+  
+.update-review-star-container{
+    display: flex;
+    flex-direction: row;
+}
+.update-review-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#close-update-review-button{
+    background-color: transparent;
+    border: none;
+}
+.submit-update-review-button{
+    width: 200px;
+    height: 30px;
+    border: none;
+    background-color:  rgb(243, 96, 96);
+    border-radius: 10px;
+    margin: 5px;
+    color:white;
+}
+.submit-update-review-button-disable{
+    width: 200px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    border-radius: 10px;
+    margin: 5px;
+    color:lightgray;
+}

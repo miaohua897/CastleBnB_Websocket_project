@@ -25,12 +25,14 @@
     align-items: flex-start;
     padding: 5px;
     margin:3px;
+    color: black;
 }
 .single-spot-outlet img{
     border-radius: 5px;
 }
 .single-spot-outlet p{
     margin:2px;
+    color: black;
 }
 .single-spot-outlet:hover {
     transform: scale(1.05);
