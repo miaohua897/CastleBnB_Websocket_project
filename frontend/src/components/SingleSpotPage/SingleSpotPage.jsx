@@ -33,7 +33,7 @@ function SingleSpotPage(){
                         transition: 'color 0.05s ease',
                         cursor: 'pointer'  
                         }}> <FaStar /></a> 
-                        {'    '}   
+                        {'     '}   
                         {spot.avgRating?
                         (Math.round(spot.avgRating * 10) / 10===5||Math.round(spot.avgRating * 10) / 10===4||Math.round(spot.avgRating * 10) / 10===3||Math.round(spot.avgRating * 10) / 10===2||Math.round(spot.avgRating * 10) / 10===1? `${Math.round(spot.avgRating * 10) / 10}.0`:Math.round(spot.avgRating * 10) / 10)
                         :"New"} 

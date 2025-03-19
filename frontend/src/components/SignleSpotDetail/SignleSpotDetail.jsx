@@ -12,7 +12,7 @@ function SignleSpotDetail(){
     const dispatch=useDispatch();
     useEffect(()=>{
         dispatch(thunkGetSingleSpotDetail(spotId))
-    },[])
+    },[dispatch,spotId])
     const thespot = useSelector(state=>state.spot.spotDetail);
     const handleReserve=()=>{
         alert('Feature coming soon')
@@ -42,9 +42,9 @@ function SignleSpotDetail(){
                         </div>
                             <button  onClick={handleReserve} id="noPreview-images-button">Reserve</button>
                     </div>
-                    </div>
-            
-                        {thespot.Owner?(
+                    </div>  
+                    <div className="spot-info-container">
+                    {thespot.Owner?(
                             <div className="owner-name">
                                 <br></br>
                                 <br></br>
@@ -56,6 +56,8 @@ function SignleSpotDetail(){
             
                         <p className="spot-location" style={{color:"black"}}>{"Location: "+thespot.city+',   '+thespot.state+',   '+thespot.country}</p>
                         <p className="spot-description"  style={{color:"black"}}>{'Description:  '+thespot.description}</p>
+                    </div>         
+                      
             </div>
                
                 <p style={{color:"black"}}> <FaStar style={{color:"black"}}/>

@@ -14,7 +14,7 @@ function ManageYourSpots(){
   
     useEffect(()=>{
         dispatch(thunkGetCurrentSpot())
-    },[]);
+    },[dispatch]);
 
     const spots = useSelector(state=>state.spot.currentSpot.Spots);
   
@@ -60,12 +60,7 @@ function ManageYourSpots(){
                       className='updateAspotbutton'
                       modalComponent={<DeleteASpot spotid={spot.id}/>}
                     />
-
-                      {/* <DeleteASpotButton spotid={spot.id}/> */}
                     </div>
-                    
-                    
-
                       </div>
                     )    
                }):<p>Create a New Spot</p>

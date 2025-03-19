@@ -27,14 +27,14 @@ function CreateAReview({spotId}){
 
     const handleFaStarClickFive=()=>{
         setRating(5)
-        setHoveredfive(true);  // 设置为 hovered 状态
+        setHoveredfive(true); 
         setHoveredfourfour(true);  
         setHoveredthreethree(true);  
         setHoveredtwotwo(true);  
         setHoveredoneone(true); 
     }
     const handleMouseEnter = () => {
-      setHovered(true);  // 设置为 hovered 状态
+      setHovered(true);  
       setHoveredfour(true);  
       setHoveredthree(true);  
       setHoveredtwo(true);  
@@ -108,22 +108,15 @@ function CreateAReview({spotId}){
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        // console.log('rating',rating,newreview,spotId);
         dispatch(thunkCreateAReview({
             "stars":rating,'review':newreview,spotId,'User':sessionUser 
-        }));
-      
-       
+        }));       
         navigate(`/spots/${spotId}`);
         dispatch(thunkGetSingleSpotDetail(spotId));
         closeModal();
-        
-        // window.location.reload();
     }
 
-    // if(!isCreateReviewOpen) return null;
   return (
-    // <p style={{color:"white"}}>hello</p>
     <div >
         <form className="create-review-container"
         onSubmit={handleSubmit}

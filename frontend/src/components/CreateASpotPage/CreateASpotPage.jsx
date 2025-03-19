@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import './CreateASpot.css';
 import { useDispatch } from 'react-redux';
 import {thunkCreateSpot} from '../../redux/spot';
 import { useNavigate } from 'react-router-dom';
+import './CreateASpotPage.css';
 
 function CreateASpotPage(){
  
@@ -30,23 +30,7 @@ function CreateASpotPage(){
 
 
     const handlecreateSpotSubmit= async (e)=>{
-      e.preventDefault();
-
-      // if(name.length>50) {
-      //   const newerror ={...errors};
-      //   newerror['name']="Name must be less than 50 characters";
-      //   setErrors(newerror);
-      //   console.log(errors);
-      //   return ;
-      // }
-      // if(Number(price)<=0){
-      //   const newerror ={...errors};
-      //   newerror['price']="Price per day must be a positive number";
-      //   setErrors(newerror);
-      //   console.log(errors);
-      //   return ;
-      // }
- 
+      e.preventDefault(); 
       const previewimagedata={
         "url": `${previewimage}`,
         "preview": true
@@ -135,7 +119,7 @@ function CreateASpotPage(){
               <div className="CreateASpotFormContainer">
                 <p>Country</p>
                 <label style={{color:'black'}}>
-                  {/* Country {'                 '} */}
+                
                   <input type="text" 
                    style={{width:800}}
                   value={country}
@@ -146,7 +130,7 @@ function CreateASpotPage(){
                 <p style={{color:'red'}}>{errors.country?errors.country:null}</p>
                 <p>Street Address</p>
                 <label style={{color:'black'}}>
-                  {/* Street Address{'                 '} */}
+                
                   <input type="text" 
                    style={{width:800}}
                    value={address}
@@ -157,7 +141,7 @@ function CreateASpotPage(){
                 <div className='cityNstate'>
                 <p>City</p>
                 <label style={{color:'black'}}>
-                  {/* City{'                 '} */}
+               
                   <input type="text" 
                    style={{width:400}}
                      value={city}
@@ -167,7 +151,7 @@ function CreateASpotPage(){
                 <p style={{color:'red'}}>{errors.city?errors.city:null}</p>
                 <p>State</p>
                 <label style={{color:'black'}}>
-                  {/* State{'                 '} */}
+                 
                   <input type="text" 
                    value={state}
                    onChange={(e) => setState(e.target.value)}

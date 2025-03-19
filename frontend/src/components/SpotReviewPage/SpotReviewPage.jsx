@@ -1,17 +1,18 @@
-import { useEffect } from "react";
+import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {thunkGetSingleSpotReview} from '../../redux/spot';
 import CreateAReview from '../CreateAReview';
 import OpenModalButton from '../OpenModalButton';
 import UpdateReviewPage from '../UpdateReviewPage';
 import DeleteReviewPage from '../DeleteReviewPage';
+import { FaStar } from 'react-icons/fa6'; 
 import './SpotReviewPage.css';
 function SpotReviewPage({spotId}){
     const sessionUser = useSelector(state => state.session.user);
     const dispatch=useDispatch();
     useEffect(()=>{
         dispatch(thunkGetSingleSpotReview(spotId))
-    },[])
+    },[dispatch,spotId])
 
     const thespot =useSelector(state=>state.spot);
     if(Object.keys(thespot.reviews).length===0) return (
@@ -24,15 +25,18 @@ function SpotReviewPage({spotId}){
         /></>);
 
     const thereview =thespot.reviews.Reviews;
-    let userReview=[];
-    let ownerOrNot =false;
+
+    let isOwnerReview = false;
     if(sessionUser){
         if(thereview.length >0){
-            userReview = thereview.filter(el=>el.userId===sessionUser.id)
-            }else{
-            userReview=[];
-            }
-        if(sessionUser.id !==thespot.ownerId) ownerOrNot=true;
+            thereview.map(el=>{
+                if (el.userId===sessionUser.id){
+                    isOwnerReview=true;
+                    return;
+                }
+            })
+        }
+    
     }
 
     const thereviewReverse=(thereview)=>{
@@ -45,7 +49,7 @@ function SpotReviewPage({spotId}){
  
     return (
         <>
-        {sessionUser&& userReview.length===0 && ownerOrNot?
+        {sessionUser&& !isOwnerReview?
         <OpenModalButton
         buttonText="Add A Review"
         className='add-spot-review-button'
@@ -56,6 +60,7 @@ function SpotReviewPage({spotId}){
             thereviewReverse(thereview).map((el,index)=>{
                 return (
                     <div key={index} className='review-container'>
+                        <p><FaStar />{"  "+el.stars+'.0 '}</p>
                      <div className="review-card">
                         <p id='review-name'>{el.User.username+' says: '}</p>
                         <p id='review-review'>{el.review}</p>
