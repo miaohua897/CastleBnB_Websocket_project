@@ -1,4 +1,5 @@
 import {thunkDeleteAReview,thunkGetSingleSpotDetail} from '../../redux/spot';
+import {thunkDeleteManageReview,thunkGetCurrentReviews } from '../../redux/review';
 import { useDispatch } from 'react-redux';
 import { useModal } from "../../context/Modal";
 import './DeleteReviewPage.css';
@@ -10,7 +11,9 @@ function DeleteReviewPage({reviewid,spotId}){
 
         const handlerClickDelete=()=>{
             dispatch(thunkDeleteAReview(reviewid));
-            dispatch(thunkGetSingleSpotDetail(spotId))
+            dispatch(thunkDeleteManageReview(reviewid));
+            dispatch(thunkGetSingleSpotDetail(spotId));
+            dispatch(thunkGetCurrentReviews());
             closeModal()
         }
             
