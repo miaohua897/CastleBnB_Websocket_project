@@ -1,11 +1,12 @@
 
 # Welcome to CastleBnb
 
-CastleBnb is a website that provides luxury house for users to book and review. The user can also create a spot, manage spots and reviews.
+CastleBnb is a website that provides luxury house for users to book and review. The user can also create a spot, manage spots, reviews and share their thoughts.  
+Spot and review managements are full CRUD. And the discussion feathure is written by Websocket tech.
 
 ## Live Link
 
-🏰 [CastleBnb](https://castlebnb-7e4w.onrender.com)
+🏰 [CastleBnb](https://castlebnb-websocket-project.onrender.com/)
 
 ## Tech Stack
 **Frameworks and Libraries:**     
@@ -33,20 +34,26 @@ CastleBnb is a website that provides luxury house for users to book and review. 
 
 ## Landing Page
 
-<img width="1423" alt="Screenshot 2025-03-04 at 10 54 02 AM" src="https://github.com/user-attachments/assets/788f9530-88a0-4691-b074-e8bca68aae98" />
+<img width="1331" alt="Screenshot 2025-03-19 at 3 35 25 PM" src="https://github.com/user-attachments/assets/869340ca-8ccf-429f-8188-0b137566617d" />  
+
+## Discussion 
+
+<img width="1340" alt="Screenshot 2025-03-19 at 3 35 11 PM" src="https://github.com/user-attachments/assets/882fb2d4-5715-401f-b211-1f2bca181c11" />  
 
 ## Spot Detail
 
-<img width="1439" alt="Screenshot 2025-03-04 at 2 53 05 PM" src="https://github.com/user-attachments/assets/7f203de2-a46e-48ec-be37-b634f7275d09" />
+<img width="1346" alt="Screenshot 2025-03-19 at 3 42 53 PM" src="https://github.com/user-attachments/assets/b83cadc6-ce94-4447-833a-1501d938ad45" />    
 
 
 ## Spot Management
 
-<img width="1426" alt="Screenshot 2025-03-04 at 10 54 26 AM" src="https://github.com/user-attachments/assets/47dca07a-df4f-4b98-b7a7-f6d7012fb227" />
+<img width="1361" alt="Screenshot 2025-03-19 at 3 44 05 PM" src="https://github.com/user-attachments/assets/a528c32a-6e6f-4858-ad1a-b9dd55c25f6b" />    
+
 
 ## Reviews Management
 
-<img width="1443" alt="Screenshot 2025-03-04 at 2 53 22 PM" src="https://github.com/user-attachments/assets/2372ae4e-bc5a-4133-b62b-1e0386790996" />
+<img width="1372" alt="Screenshot 2025-03-19 at 3 44 20 PM" src="https://github.com/user-attachments/assets/15fd33cc-964b-49a6-9f94-42c53970ecd7" />    
+
 
 
 
