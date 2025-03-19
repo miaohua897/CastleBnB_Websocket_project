@@ -12,7 +12,7 @@ function ManageReviews(){
     const reviews = useSelector(state=>state.review.currentReview);
     useEffect(()=>{
         dispatch(thunkGetCurrentReviews())
-    },[]);
+    },[dispatch]);
     return (<>
     <h1>Manage Reviews</h1>
     {
