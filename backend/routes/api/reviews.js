@@ -125,6 +125,7 @@ router.put('/:reviewId', async (req,res)=>{
 
         if(review) foundReview.review = review;
         if(stars) foundReview.stars = stars;
+        foundReview.save()
         res.status(200);
         return res.json(
             foundReview

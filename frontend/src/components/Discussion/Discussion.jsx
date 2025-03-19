@@ -19,12 +19,12 @@ function Discussion() {
         useEffect(() => {
           connectSocket();
         }, []);
-        useEffect(()=>{
+      
           if (!sessionUser) {
             navigate('/')
             return ;
           }
-        },[sessionUser])
+   
       function connectSocket() {
         socket.on("connection", (socket) => {
           console.log(socket);

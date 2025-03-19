@@ -102,10 +102,11 @@ export const thunkUpdateAReview=(data)=>async(dispatch)=>{
                 stars
             })
           });
+      
         if(res.ok){
             const datares = await res.json();
-            console.log('datares',datares);
-            dispatch(updateReview({datares,User}));
+            // console.log('datares',datares);
+            dispatch(updateReview({...datares,User}));
             return datares;
         }
     }catch(e){
@@ -321,12 +322,16 @@ const spotReducer = (state={currentSpot:[],reviews:{Reviews:[]},spotDetail:{}},a
             }
         case UPDATE_REVIEW :
                 {
-                    const objreviewUpdate ={...state};
-                    objreviewUpdate.reviews.Reviews=objreviewUpdate.reviews.Reviews.map(el=>{
-                        if(el.id===action.payload.id){
-                            return action.payload;}
-                        return el;})
-                    return objreviewUpdate;
+                    const objreviewUpdate =state.reviews.Reviews;
+                    const reviewsArr =[];
+                    objreviewUpdate.map(el=>{
+                        if(el.id !==action.payload.id){
+                            reviewsArr.push(el)}
+                        else{
+                            reviewsArr.push(action.payload)
+                        }
+                    })
+                    return {...state,reviews:{Reviews:reviewsArr}};
                 }
         case LOAD_CURRENT_SPOT:
             return {

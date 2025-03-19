@@ -4,7 +4,7 @@ import SignupFormPage from '../components/SignupFormPage';
 import SingleSpotPage from '../components/SingleSpotPage/SingleSpotPage';
 import Layout from './Layout';
 import Discussion  from '../components/Discussion';
-import CreateASpotPage from '../components/CreateASpot/CreateASpotPage';
+import CreateASpotPage from '../components/CreateASpotPage';
 import SignleSpotDetail from '../components/SignleSpotDetail';
 import UpdateASpotPage from '../components/UpdateASpotPage';
 import ManageSpots from '../components/ManageSpots';

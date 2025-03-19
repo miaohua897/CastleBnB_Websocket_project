@@ -80,7 +80,7 @@ function UpdateASpotPage(){
             imageThreedata,
             imageFourdata
           };
-        dispatch(thunkUpdateSpot(updateinfo,id))
+       await dispatch(thunkUpdateSpot(updateinfo,id))
         navigate(`/spots/${id}`);}
 
     const handleBackMangeSpot=()=>{

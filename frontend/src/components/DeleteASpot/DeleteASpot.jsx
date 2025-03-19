@@ -8,9 +8,8 @@ function DeleteASpot({spotid}){
    const navigate=useNavigate();
     // if(!isDeleteASpotButtonModalOpen) return null;
      const { closeModal } = useModal();
-    const handlerClickDelete=()=>{
-   
-        dispatch(thunkDeleteASpot(spotid));
+    const handlerClickDelete= async()=>{
+       await dispatch(thunkDeleteASpot(spotid));
         navigate('/spots/current');
         closeModal() 
     }

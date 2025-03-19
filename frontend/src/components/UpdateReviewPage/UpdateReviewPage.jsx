@@ -1,9 +1,9 @@
 import { FaStar } from 'react-icons/fa6';
-import {  useEffect, useState } from 'react'; 
+import { useState } from 'react'; 
 import { useDispatch } from 'react-redux';
 import {  useNavigate } from 'react-router-dom';
 import { useModal } from "../../context/Modal";
-import {thunkUpdateAReview} from '../../redux/spot';
+import {thunkUpdateAReview,thunkGetSingleSpotDetail} from '../../redux/spot';
 import { useSelector } from 'react-redux';
 import './UpdateReviewPage.css';
 function UpdateReviewPage({reviewid,spotId,theReview}){
@@ -12,7 +12,7 @@ function UpdateReviewPage({reviewid,spotId,theReview}){
     const { closeModal } = useModal();
     const sessionUser = useSelector(state => state.session.user);
     const [rating,setRating] = useState(0);
-    const [newreview,setNewreview]=useState('');
+    const [newreview,setNewreview]=useState(theReview.review);
     const [hovered, setHovered] = useState(false);
     const [hoveredfive, setHoveredfive] = useState(false);
     const [hoveredone, setHoveredone] = useState(false);
@@ -24,20 +24,16 @@ function UpdateReviewPage({reviewid,spotId,theReview}){
     const [hoveredfour, setHoveredfour] = useState(false);
     const [hoveredfourfour, setHoveredfourfour] = useState(false);
 
-    useEffect(()=>{
-      setNewreview(theReview.review);
-    },[])
-
     const handleFaStarClickFive=()=>{
         setRating(5)
-        setHoveredfive(true);  // 设置为 hovered 状态
+        setHoveredfive(true); 
         setHoveredfourfour(true);  
         setHoveredthreethree(true);  
         setHoveredtwotwo(true);  
         setHoveredoneone(true); 
     }
     const handleMouseEnter = () => {
-      setHovered(true);  // 设置为 hovered 状态
+      setHovered(true);  
       setHoveredfour(true);  
       setHoveredthree(true);  
       setHoveredtwo(true);  
@@ -109,13 +105,13 @@ function UpdateReviewPage({reviewid,spotId,theReview}){
       setHoveredone(false);  
     }
 
-    const handleSubmit=(e)=>{
+    const handleSubmit= async (e)=>{
         e.preventDefault();
-        dispatch(thunkUpdateAReview({
+       await  dispatch(thunkUpdateAReview({
             "stars":rating,'review':newreview,spotId,reviewid,'User':sessionUser
         }));
-     
-       
+        await dispatch(thunkGetSingleSpotDetail(spotId))
+        
         navigate(`/spots/${spotId}`);
         closeModal()
     }
