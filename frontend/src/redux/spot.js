@@ -283,7 +283,7 @@ export const thunkGetSingleSpotDetail=(spotId)=> async (dispatch)=>{
         const data = await res.json();
         const newdata = data;
         dispatch(loadSpotDetail(newdata));
-        return res;
+        return newdata;
     }
 }
 export const thunkGetSingleSpotReview=(spotId)=> async (dispatch)=>{

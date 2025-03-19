@@ -32,20 +32,20 @@ function CreateASpotPage(){
     const handlecreateSpotSubmit= async (e)=>{
       e.preventDefault();
 
-      if(name.length>50) {
-        const newerror ={...errors};
-        newerror['name']="Name must be less than 50 characters";
-        setErrors(newerror);
-        console.log(errors);
-        return ;
-      }
-      if(Number(price)<=0){
-        const newerror ={...errors};
-        newerror['price']="Price per day must be a positive number";
-        setErrors(newerror);
-        console.log(errors);
-        return ;
-      }
+      // if(name.length>50) {
+      //   const newerror ={...errors};
+      //   newerror['name']="Name must be less than 50 characters";
+      //   setErrors(newerror);
+      //   console.log(errors);
+      //   return ;
+      // }
+      // if(Number(price)<=0){
+      //   const newerror ={...errors};
+      //   newerror['price']="Price per day must be a positive number";
+      //   setErrors(newerror);
+      //   console.log(errors);
+      //   return ;
+      // }
  
       const previewimagedata={
         "url": `${previewimage}`,
@@ -140,6 +140,7 @@ function CreateASpotPage(){
                    style={{width:800}}
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
+                  minLength='0' maxLength='30'
                   required />
                 </label>
                 <p style={{color:'red'}}>{errors.country?errors.country:null}</p>
@@ -201,9 +202,10 @@ function CreateASpotPage(){
                 <label style={{color:'black'}}>  
                     {'$ * / night' }{'                 '}
                   <input type="number" 
-                  min="1"
+               
                     value={price}
                     style={{width:730}}
+                     min='1' max='250'
                     onChange={(e) => setPrice(e.target.value)}
                   required placeholder='Price per night (USD)'/>
                 </label>
@@ -211,39 +213,40 @@ function CreateASpotPage(){
                 <h2 style={{color:'black'}}>Liven up your spot with photos</h2>
                 <p style={{color:'black'}}>Submit a link to at least one photo to publish your spot.</p>
                 <label style={{color:'black'}}>   
-                  <input type="text" 
+                  <input type="url" 
                      value={previewimage}
                      style={{width:800}}
+                     placeholder='https://example.com'
                      onChange={(e) => setPreviewimage(e.target.value)}
-                  required placeholder='Preview Image URL'/>
+                  required />
                 </label>
                 <label style={{color:'black'}}>   
-                  <input type="text" 
+                  <input type="url" 
                   style={{width:800}}
                      value={imageOne}
                      onChange={(e) => setImageOne(e.target.value)}
-                  required placeholder='Image URL'/>
+                  required placeholder='https://example.com'/>
                 </label>
                 <label style={{color:'black'}}>   
-                  <input type="text" 
+                  <input type="url" 
                      value={imageTwo}
                      style={{width:800}}
                      onChange={(e) => setImageTwo(e.target.value)}
-                  required placeholder='Image URL'/>
+                  required placeholder='http://example.com'/>
                 </label>
                 <label style={{color:'black'}}>   
-                  <input type="text" 
+                  <input type="url" 
                      value={imageThree}
                      style={{width:800}}
                      onChange={(e) => setImageThree(e.target.value)}
-                  required placeholder='Image URL'/>
+                  required placeholder='http://example.com'/>
                 </label>
                 <label style={{color:'black'}}>   
-                  <input type="text" 
+                  <input type="url" 
                      value={imageFour}
                      style={{width:800}}
                      onChange={(e) => setImageFour(e.target.value)}
-                  required placeholder='Image URL'/>
+                  required placeholder='http://example.com'/>
                 </label>
                 <button 
                 className='submitCreateSpot'
