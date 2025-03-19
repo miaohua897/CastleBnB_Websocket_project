@@ -7,6 +7,21 @@ function UpdateASpotPage(){
     const {id}= useParams();
     const dispatch=useDispatch();
     const navigate =useNavigate();
+    const [country,setCountry]=useState('');
+    const [address,setAddress] =useState('');
+    const [city,setCity] = useState('');
+    const [state,setState]=useState('');
+    const [description,setDescription]=useState('');
+    const [name,setName]=useState('');
+    const [price,setPrice]=useState('');
+    const lat =10;
+    const lng=10;
+    const [previewimage,setPreviewimage]=useState('');
+    const [imageOne,setImageOne]=useState('');
+    const [imageTwo,setImageTwo]=useState('');
+    const [imageThree,setImageThree]=useState('');
+    const [imageFour,setImageFour]=useState('');
+
     useEffect(()=>{
       const fetchData = async () => {
         try {
@@ -25,23 +40,7 @@ function UpdateASpotPage(){
   
       fetchData();
     },[dispatch,id])
-
-    const [country,setCountry]=useState('');
-    const [address,setAddress] =useState('');
-    const [city,setCity] = useState('');
-    const [state,setState]=useState('');
-    const [description,setDescription]=useState('');
-    const [name,setName]=useState('');
-    const [price,setPrice]=useState('');
-    const lat =10;
-    const lng=10;
-    const [previewimage,setPreviewimage]=useState('');
-    const [imageOne,setImageOne]=useState('');
-    const [imageTwo,setImageTwo]=useState('');
-    const [imageThree,setImageThree]=useState('');
-    const [imageFour,setImageFour]=useState('');
-    
-   
+ 
     const handleupdateSpotSubmit= async (e)=>{
         e.preventDefault();
         const previewimagedata={

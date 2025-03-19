@@ -7,7 +7,6 @@ router.use(restoreUser);
 router.get('/current',requireAuth, async (req,res)=>{
 
     const user = req.user;
-    console.log(user);
     const foundReviews = await Review.findAll({
         where:{
             userId:user.id

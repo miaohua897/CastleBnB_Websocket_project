@@ -10,10 +10,11 @@ import './SignleSpotDetail.css';
 function SignleSpotDetail(){
     const {spotId} = useParams();
     const dispatch=useDispatch();
+    const thespot = useSelector(state=>state.spot.spotDetail);
     useEffect(()=>{
         dispatch(thunkGetSingleSpotDetail(spotId))
     },[dispatch,spotId])
-    const thespot = useSelector(state=>state.spot.spotDetail);
+  
     const handleReserve=()=>{
         alert('Feature coming soon')
     }

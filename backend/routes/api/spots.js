@@ -136,7 +136,7 @@ router.get('/current', async (req, res)=>{
 router.get('/:spotId', async (req,res)=>{
 
     const spotid = req.params.spotId;
-    console.log(spotid )
+
     const foundSpot = await Spot.findByPk(Number(spotid));
     if(!foundSpot){
         res.status(404);
@@ -267,8 +267,6 @@ router.get('/', async (req, res)=>{
         limit:Number(size),
         offset,
     });
-
-    console.log(findSpot);
 
     if(findSpot.length === 0) {
      

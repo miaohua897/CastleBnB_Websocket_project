@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import './CreateASpotPage.css';
 
 function CreateASpotPage(){
+
+    const dispatch=useDispatch();
+    const navigate =useNavigate();
  
     const [country,setCountry]=useState('');
     const [address,setAddress] =useState('');
@@ -23,11 +26,6 @@ function CreateASpotPage(){
     const [imageThree,setImageThree]=useState('');
     const [imageFour,setImageFour]=useState('');
     const [errors,setErrors]=useState({});
-
-    const dispatch=useDispatch();
-    const navigate =useNavigate();
- 
-
 
     const handlecreateSpotSubmit= async (e)=>{
       e.preventDefault(); 
@@ -100,7 +98,6 @@ function CreateASpotPage(){
              setErrors(newerror);
               console.log('createaspot',errors);
         }
-      
 
     }
   
@@ -108,15 +105,14 @@ function CreateASpotPage(){
     return (
      
         <div >
-          <div className='createASpotPage'>
+          <div className='create-spot-page'>
         <h1>Create a new Spot</h1>
           <h2 style={{color:'black'}}>Wheres&apos; your place located?</h2>
           <p style={{color:'black'}}>Guests will only get your exact address once they booked a reservation.</p>
             <form className="loginContainer"
             onSubmit={handlecreateSpotSubmit}
             >
-            
-              <div className="CreateASpotFormContainer">
+              <div className="create-spot-form-container">
                 <p>Country</p>
                 <label style={{color:'black'}}>
                 
@@ -138,7 +134,7 @@ function CreateASpotPage(){
                   required />
                 </label>
                 <p style={{color:'red'}}>{errors.address?errors.address:null}</p>
-                <div className='cityNstate'>
+                <div className='city-state-container'>
                 <p>City</p>
                 <label style={{color:'black'}}>
                
@@ -233,7 +229,7 @@ function CreateASpotPage(){
                   required placeholder='http://example.com'/>
                 </label>
                 <button 
-                className='submitCreateSpot'
+                className='submit-create-spot'
                  type="submit">Create Spot</button>
               </div>
             </form>

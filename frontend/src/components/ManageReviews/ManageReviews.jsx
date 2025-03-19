@@ -8,7 +8,6 @@ import './ManageReviews.css';
 
 function ManageReviews(){
     const dispatch = useDispatch();
-   
     const reviews = useSelector(state=>state.review.currentReview);
     useEffect(()=>{
         dispatch(thunkGetCurrentReviews())
@@ -34,21 +33,12 @@ function ManageReviews(){
                                    "review":el.review
                                 }}/>
                             }/>
-
-
                              <OpenModalButton
                             buttonText="Delete A Review"
                             className='update-spot-review-button'
                             modalComponent={
                                 <DeleteReviewPage reviewid={el.id}   spotId={el.Spot.id} />
                             }/>
-                        {/* <ManageReviewUpdateButton reviewid={el.id} 
-                        spotId={el.Spot.id}
-                        theReview={{
-                            "stars":el.stars,
-                           "review":el.review
-                        }}/> */}
-                        {/* <ManageReviewDeleteButton reviewid={el.id} /> */}
                        </div>
                     </div>
                 )
