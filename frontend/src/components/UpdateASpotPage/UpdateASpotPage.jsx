@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useDispatch,useSelector  } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import './UpdateASpotPage.css';
 import {thunkGetSingleSpotDetail,thunkUpdateSpot} from  '../../redux/spot';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -8,23 +8,31 @@ function UpdateASpotPage(){
     const dispatch=useDispatch();
     const navigate =useNavigate();
     useEffect(()=>{
-        dispatch(thunkGetSingleSpotDetail(id))
-    },[dispatch])
-    const thespot = useSelector(state=>state.spot.spotDetail);
-    const initCountry =thespot.country;
-    const initAddress = thespot.address;
-    const initCity =thespot.city;
-    const initState =thespot.state;
-    const initDescription = thespot.description;
-    const initName =thespot.name;
-    const initPrice = thespot.price;
-    const [country,setCountry]=useState(thespot.country);
-    const [address,setAddress] =useState(thespot.address);
-    const [city,setCity] = useState(thespot.city);
-    const [state,setState]=useState(thespot.state);
-    const [description,setDescription]=useState(thespot.description);
-    const [name,setName]=useState(thespot.name);
-    const [price,setPrice]=useState(thespot.price);
+      const fetchData = async () => {
+        try {
+          const newData = await dispatch(thunkGetSingleSpotDetail(id));
+          setCountry(newData.country)
+          setAddress(newData.address)
+          setCity(newData.city)
+          setState(newData.state)
+          setDescription(newData.description)
+          setName(newData.name)
+          setPrice(newData.price)
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+  
+      fetchData();
+    },[dispatch,id])
+
+    const [country,setCountry]=useState('');
+    const [address,setAddress] =useState('');
+    const [city,setCity] = useState('');
+    const [state,setState]=useState('');
+    const [description,setDescription]=useState('');
+    const [name,setName]=useState('');
+    const [price,setPrice]=useState('');
     const lat =10;
     const lng=10;
     const [previewimage,setPreviewimage]=useState('');
@@ -32,6 +40,7 @@ function UpdateASpotPage(){
     const [imageTwo,setImageTwo]=useState('');
     const [imageThree,setImageThree]=useState('');
     const [imageFour,setImageFour]=useState('');
+    
    
     const handleupdateSpotSubmit= async (e)=>{
         e.preventDefault();
@@ -93,7 +102,7 @@ function UpdateASpotPage(){
                   <label style={{color:'white'}} >
                     <input type="text" 
                     className='update-spot-input'
-                    value={country||initCountry}
+                    value={country}
                     onChange={(e) => setCountry(e.target.value)}
                     required />
                   </label>
@@ -103,7 +112,7 @@ function UpdateASpotPage(){
                   style={{color:'white'}}>
                     <input type="text" 
                     className='update-spot-input'
-                    value={address||initAddress}
+                    value={address}
                     onChange={(e) => setAddress(e.target.value)}
                     required />
                   </label>    
@@ -114,7 +123,7 @@ function UpdateASpotPage(){
                         <label
                         style={{color:'white'}} >
                           <input type="text"                  
-                            value={city||initCity}
+                            value={city}
                             onChange={(e) => setCity(e.target.value)}
                             className='update-spot-city-state-input'
                           required />
@@ -126,7 +135,7 @@ function UpdateASpotPage(){
                     <label
                     style={{color:'white'}}>
                       <input type="text"          
-                      value={state||initState}
+                      value={state}
                       onChange={(e) => setState(e.target.value)}
                       required />
                     </label>
@@ -144,7 +153,7 @@ function UpdateASpotPage(){
                 <label style={{color:'white'}}>   
                   <input type="text" 
                     className='updat-spot-description-input'
-                     value={description||initDescription}
+                     value={description}
                      onChange={(e) => setDescription(e.target.value)}
                   required placeholder='Please write at least 30 characters'/>
                 </label>
@@ -154,7 +163,7 @@ function UpdateASpotPage(){
                 <label style={{color:'white'}}>   
                   <input type="text" 
                           className='update-spot-input'
-                          value={name||initName}
+                          value={name}
                           onChange={(e) => setName(e.target.value)}
                   required 
                   placeholder='Name of your spot'/>
@@ -167,7 +176,7 @@ function UpdateASpotPage(){
                   <input type="number" 
                   min='1'
                     className='update-spot-input'
-                    value={price||initPrice}
+                    value={price}
                     onChange={(e) => setPrice(e.target.value)}
                   required placeholder='Price per night (USD)'/>
                 </label>
@@ -176,52 +185,46 @@ function UpdateASpotPage(){
                 <p style={{color:'white'}}>Submit a link to at least one photo to publish your spot.</p>
                 <div className='updateUrl'>
                 <label style={{color:'white'}}>   
-                  <input type="text" 
-                
+                  <input type="url"                 
                      value={previewimage}
                       className='updateUrlInput'
                      onChange={(e) => setPreviewimage(e.target.value)}
                   // required 
-                  placeholder='Preview Image URL'/>
+                  placeholder='http://example.com'/>
                 </label>
                 <label style={{color:'white'}}>   
-                  <input type="text" 
-                          
+                  <input type="url"                        
                      value={imageOne}
                      className='updateUrlInput'
                      onChange={(e) => setImageOne(e.target.value)}
                   // required 
-                  placeholder='Image URL'/>
+                  placeholder='http://example.com'/>
                 </label>
                 <label style={{color:'white'}}>   
-                  <input type="text" 
-                           
+                  <input type="url"                         
                      value={imageTwo}
                      className='updateUrlInput'
                      onChange={(e) => setImageTwo(e.target.value)}
                   // required 
-                  placeholder='Image URL'/>
+                  placeholder='http://example.com'/>
                 </label>
                 <label style={{color:'white'}}>   
-                  <input type="text" 
-                           
+                  <input type="url"                            
                      value={imageThree}
-                     className='updateUrlInput'
+                     className='updateUrlInpt'
                      onChange={(e) => setImageThree(e.target.value)}
                   // required 
-                  placeholder='Image URL'/>
+                  placeholder='http://example.com'/>
                 </label>
                 <label style={{color:'white'}}>   
-                  <input type="text" 
-                 
+                  <input type="url"                 
                      value={imageFour}
                      className='updateUrlInput'
                      onChange={(e) => setImageFour(e.target.value)}
                   // required 
-                  placeholder='Image URL'/>
+                  placeholder='http://example.com'/>
                 </label>
-                </div>
-            
+                </div>           
                 <button 
                 className='update-spot-button'
                 type="submit">Update Spot</button>
