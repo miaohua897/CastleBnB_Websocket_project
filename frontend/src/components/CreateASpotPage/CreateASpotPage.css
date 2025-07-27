@@ -1,32 +1,32 @@
-.create-spot-page{
+  .create-spot-page{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+  }
   .create-spot-form-container {
     display: flex;
     flex-direction: column;
   }
-  
+
   label {
     margin-bottom: 10px;
   }
-  
+
   input {
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-.city-state-container{
+  .city-state-container{
   display: flex;
   flex-direction: row;
   gap:5%;
-}
+  }
 
 
-.submit-create-spot{
+  .submit-create-spot{
   border: 2px solid  rgb(243, 96, 96);
   border-radius: 3px;
   font-weight: bolder;
@@ -34,4 +34,4 @@
   height: 30px;
   margin-left: 350px;
   background-color:  rgb(243, 96, 96);
-}
+  }

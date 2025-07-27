@@ -8,7 +8,6 @@ function DeleteReviewPage({reviewid,spotId}){
     
         const dispatch=useDispatch();
         const { closeModal } = useModal();
-
         const handlerClickDelete=()=>{
             dispatch(thunkDeleteAReview(reviewid));
             dispatch(thunkDeleteManageReview(reviewid));

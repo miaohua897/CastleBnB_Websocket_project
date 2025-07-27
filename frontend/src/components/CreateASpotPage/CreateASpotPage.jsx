@@ -16,8 +16,6 @@ function CreateASpotPage(){
     const [description,setDescription]=useState('');
     const [name,setName]=useState('');
     const [price,setPrice]=useState('');
-    // const [lat,setLat]=useState(10);
-    // const [lng,setLng]=useState(10);
     const lat =10;
     const lng=10;
     const [previewimage,setPreviewimage]=useState('');
