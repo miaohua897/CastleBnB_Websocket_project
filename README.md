@@ -32,23 +32,21 @@ Spot and review managements are full CRUD. And the discussion feathure is writte
 [Feature List](https://github.com/miaohua897/CastleBnb/wiki/Features) |
 [User Stores](https://github.com/miaohua897/CastleBnb/wiki/User-Stories) | -->
 
-## Landing Page
+## Landing Page  
 
-<img width="1331" alt="Screenshot 2025-03-19 at 3 35 25 PM" src="https://github.com/user-attachments/assets/869340ca-8ccf-429f-8188-0b137566617d" />  
+<img width="1339" height="684" alt="Screenshot 2025-07-26 at 6 01 09 PM" src="https://github.com/user-attachments/assets/853a5175-401d-47b9-a0a0-ce3b1bcd58e9" />  
 
 ## Discussion 
 
-<img width="1340" alt="Screenshot 2025-03-19 at 3 35 11 PM" src="https://github.com/user-attachments/assets/882fb2d4-5715-401f-b211-1f2bca181c11" />  
+<img width="1340" alt="Screenshot 2025-03-19 at 3 35 11 PM" src="https://github.com/user-attachments/assets/882fb2d4-5715-401f-b211-1f2bca181c11" />   
 
 ## Spot Detail
 
-<img width="1346" alt="Screenshot 2025-03-19 at 3 42 53 PM" src="https://github.com/user-attachments/assets/b83cadc6-ce94-4447-833a-1501d938ad45" />    
+<img width="1315" height="716" alt="Screenshot 2025-07-26 at 6 03 56 PM" src="https://github.com/user-attachments/assets/9e582201-162f-4e18-888d-e53899a824a3" />   
 
+## Spot Management   
 
-## Spot Management
-
-<img width="1361" alt="Screenshot 2025-03-19 at 3 44 05 PM" src="https://github.com/user-attachments/assets/a528c32a-6e6f-4858-ad1a-b9dd55c25f6b" />    
-
+<img width="1350" height="524" alt="Screenshot 2025-07-26 at 6 05 27 PM" src="https://github.com/user-attachments/assets/5ece6b80-34a7-495e-98b9-de9395689164" />   
 
 ## Reviews Management
 
