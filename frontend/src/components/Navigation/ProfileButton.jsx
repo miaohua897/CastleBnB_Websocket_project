@@ -39,6 +39,7 @@ function ProfileButton() {
     e.preventDefault();
     dispatch(thunkLogout());
     closeMenu();
+    navigate('/')
   };
 
   const handleDemoUser=()=>{
@@ -69,8 +70,8 @@ function ProfileButton() {
         <ul className={"profile-dropdown"} ref={ulRef}>
           {user ? (
             <>
-              <li>{user.username}</li>
-              <li>{user.email}</li>
+              <li className='user-info'>{user.username}</li>
+              <li className='user-info'>{user.email}</li>
               <li >
               <button onClick={manageYourSpotsHanlder}
               className='profile-dropdown-button'

@@ -27,6 +27,7 @@
     height: 30px;
     font-size: 18px;
     font-weight: bolder;
+    cursor: pointer;
 }
 .signup-input{
     width:250px;

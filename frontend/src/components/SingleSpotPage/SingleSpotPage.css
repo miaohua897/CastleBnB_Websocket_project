@@ -18,6 +18,7 @@
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     background-color: white;
+    cursor: pointer;
 }
 .spot-information-container{
     display: flex;

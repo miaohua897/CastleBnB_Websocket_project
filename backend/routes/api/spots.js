@@ -129,7 +129,7 @@ router.get('/current', async (req, res)=>{
         res.status(401);
         return res.json(user)
     }
-    
+    res.setHeader('Content-Type','application/json');
     return res.json(user)
   })
 

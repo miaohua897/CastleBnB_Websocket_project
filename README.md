@@ -20,7 +20,7 @@ Spot and review managements are full CRUD. And the discussion feathure is writte
 [![Websocket](https://img.shields.io/badge/Socket.io-4.1.3-010101??style=flat-square&logo=Socket.io&logoColor=white)](https://www.npmjs.com/package/ws#sending-and-receiving-text-data)
 
 
-**Database:**     
+<!-- **Database:**     
 [![Sequelize](https://img.shields.io/badge/-Sequelize-52B0E7?style=flat&logo=sequelize&logoColor=white)](https://sequelize.org/)
 
 **Hosting:**    
@@ -30,7 +30,7 @@ Spot and review managements are full CRUD. And the discussion feathure is writte
 ## Index
 [Database-Scheme](https://github.com/miaohua897/CastleBnb/wiki/Database-Schema#schema) |
 [Feature List](https://github.com/miaohua897/CastleBnb/wiki/Features) |
-[User Stores](https://github.com/miaohua897/CastleBnb/wiki/User-Stories) |
+[User Stores](https://github.com/miaohua897/CastleBnb/wiki/User-Stories) | -->
 
 ## Landing Page
 

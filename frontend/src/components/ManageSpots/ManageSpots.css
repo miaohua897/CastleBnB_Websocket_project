@@ -44,6 +44,7 @@
     align-items: center;
     margin: 10px;
     gap:10px;
+    cursor: pointer;
  }
 .updateAspotbutton{
     /* border: 2px solid  rgb(243, 96, 96);
