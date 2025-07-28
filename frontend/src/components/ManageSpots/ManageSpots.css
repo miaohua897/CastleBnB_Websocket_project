@@ -1,7 +1,9 @@
 .spot-management-container{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     }
 .spot-management-outlet{
     width:280px;

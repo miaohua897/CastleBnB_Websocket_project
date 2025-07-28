@@ -14,10 +14,11 @@ function ManageReviews(){
     },[dispatch]);
     return (<>
     <h1>Manage Reviews</h1>
+    <div className="review-management-wrapper">
     {
         reviews.length>0?
 
-            reviews.map((el,index)=>{
+                    reviews.map((el,index)=>{
                 return (
                     <div key={index} className="manage-review-container">
                         <h2>{el.Spot.name}</h2>
@@ -43,9 +44,11 @@ function ManageReviews(){
                     </div>
                 )
             })
-
+          
         :<h2>You dont&apos; have reviews</h2>
+         
     }
+     </div>
     </>)
 }
 export default ManageReviews;

@@ -5,6 +5,7 @@ import {thunkGetSingleSpotDetail} from  '../../redux/spot';
 import { FaStar } from 'react-icons/fa6'; 
 import SpotReviewPage from '../SpotReviewPage';
 import './SignleSpotDetail.css';
+import './SignleSpotDetailMedia.css'
 
 
 function SignleSpotDetail(){
@@ -21,13 +22,13 @@ function SignleSpotDetail(){
 
     return (
         <div className="single-spot-detail-page">     
-            <div>
+            <div className="spot-detail-wrapper">
                     <h1 style={{color:"black",marginBottom:'30px'}}>{thespot.name}</h1>               
                     <div className="spot-image">     
                     {thespot.SpotImages?thespot.SpotImages.map((el,index)=>{
                     if(el.preview)  return <img className='main-spot-image' src={el.url} key={index} ></img>
                         }):null}
-                    <div className="nopreview-image-button">
+                    <div className="nopreview-image-container">
                         <div className="noPreview-images">
                         {thespot.SpotImages?thespot.SpotImages.map((el,index)=>{
                             if(!el.preview) return <img src={el.url} key={index} style={{height:100,width:200}}  id="noPreviewImagesimg"></img>

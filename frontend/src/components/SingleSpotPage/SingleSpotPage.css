@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .single-spot-outlet{
     width:280px;

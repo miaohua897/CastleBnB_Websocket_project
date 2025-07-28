@@ -1,3 +1,9 @@
+.review-management-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .manage-review-container{
     width: 90%;
     border-bottom: 0.5px dashed rgb(165, 178, 177);
