@@ -9,12 +9,12 @@ import { FaStar } from 'react-icons/fa6';
 import './SpotReviewPage.css';
 function SpotReviewPage({spotId}){
     const sessionUser = useSelector(state => state.session.user);
+    const thespot =useSelector(state=>state.spot);
     const dispatch=useDispatch();
     useEffect(()=>{
         dispatch(thunkGetSingleSpotReview(spotId))
-    },[dispatch,spotId])
+    },[dispatch,spotId]) 
 
-    const thespot =useSelector(state=>state.spot);
     if(Object.keys(thespot.reviews).length===0) return (
         <>
         <p>Be the first to post a review!</p>
@@ -36,7 +36,6 @@ function SpotReviewPage({spotId}){
                 }
             })
         }
-    
     }
 
     const thereviewReverse=(thereview)=>{

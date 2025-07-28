@@ -126,7 +126,7 @@ function CreateAReview({spotId}){
                 id="close-create-review"
                 onClick={()=>closeModal()} 
               >
-                ✖️
+              ✖️
         </button>
         <div className="create-review-form-container">
         <label >

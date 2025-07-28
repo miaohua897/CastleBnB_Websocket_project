@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import ProfileButton from "./ProfileButton";
-import "./Navigation.css";
 import { useSelector } from "react-redux";
+import "./Navigation.css";
 
 
 function Navigation() {

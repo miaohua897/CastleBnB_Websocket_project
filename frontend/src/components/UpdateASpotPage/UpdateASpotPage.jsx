@@ -7,6 +7,21 @@ function UpdateASpotPage(){
     const {id}= useParams();
     const dispatch=useDispatch();
     const navigate =useNavigate();
+    const [country,setCountry]=useState('');
+    const [address,setAddress] =useState('');
+    const [city,setCity] = useState('');
+    const [state,setState]=useState('');
+    const [description,setDescription]=useState('');
+    const [name,setName]=useState('');
+    const [price,setPrice]=useState('');
+    const lat =10;
+    const lng=10;
+    const [previewimage,setPreviewimage]=useState('');
+    const [imageOne,setImageOne]=useState('');
+    const [imageTwo,setImageTwo]=useState('');
+    const [imageThree,setImageThree]=useState('');
+    const [imageFour,setImageFour]=useState('');
+
     useEffect(()=>{
       const fetchData = async () => {
         try {
@@ -25,23 +40,7 @@ function UpdateASpotPage(){
   
       fetchData();
     },[dispatch,id])
-
-    const [country,setCountry]=useState('');
-    const [address,setAddress] =useState('');
-    const [city,setCity] = useState('');
-    const [state,setState]=useState('');
-    const [description,setDescription]=useState('');
-    const [name,setName]=useState('');
-    const [price,setPrice]=useState('');
-    const lat =10;
-    const lng=10;
-    const [previewimage,setPreviewimage]=useState('');
-    const [imageOne,setImageOne]=useState('');
-    const [imageTwo,setImageTwo]=useState('');
-    const [imageThree,setImageThree]=useState('');
-    const [imageFour,setImageFour]=useState('');
-    
-   
+ 
     const handleupdateSpotSubmit= async (e)=>{
         e.preventDefault();
         const previewimagedata={
@@ -157,7 +156,7 @@ function UpdateASpotPage(){
                      onChange={(e) => setDescription(e.target.value)}
                   required placeholder='Please write at least 30 characters'/>
                 </label>
-                {/* <p style={{color:'red'}}>{errors.description?errors.description:null}</p> */}
+          
                 <h1 style={{color:'white'}}>Create a title for your spot</h1>
                 <p style={{color:'white'}}>Catch guests&apos; attention with a spot title that highlights what makes your place special.</p>
                 <label style={{color:'white'}}>   
@@ -168,7 +167,7 @@ function UpdateASpotPage(){
                   required 
                   placeholder='Name of your spot'/>
                 </label>
-                {/* <p style={{color:'red'}}>{errors.name?errors.name:null}</p> */}
+             
                 <h1 style={{color:'white'}}>Set a base price for your spot</h1>
                 <p style={{color:'white'}}>Competitive pricing can help your listing stand out and rank higher in search results.</p>
                 <label style={{color:'white'}}>  
@@ -180,7 +179,7 @@ function UpdateASpotPage(){
                     onChange={(e) => setPrice(e.target.value)}
                   required placeholder='Price per night (USD)'/>
                 </label>
-                {/* <p style={{color:'red'}}>{errors.price?errors.price:null}</p> */}
+             
                 <h1 style={{color:'white'}}>Liven up your spot with photos</h1>
                 <p style={{color:'white'}}>Submit a link to at least one photo to publish your spot.</p>
                 <div className='updateUrl'>
@@ -189,7 +188,7 @@ function UpdateASpotPage(){
                      value={previewimage}
                       className='updateUrlInput'
                      onChange={(e) => setPreviewimage(e.target.value)}
-                  // required 
+              
                   placeholder='http://example.com'/>
                 </label>
                 <label style={{color:'white'}}>   
@@ -197,7 +196,7 @@ function UpdateASpotPage(){
                      value={imageOne}
                      className='updateUrlInput'
                      onChange={(e) => setImageOne(e.target.value)}
-                  // required 
+                  
                   placeholder='http://example.com'/>
                 </label>
                 <label style={{color:'white'}}>   
@@ -205,7 +204,7 @@ function UpdateASpotPage(){
                      value={imageTwo}
                      className='updateUrlInput'
                      onChange={(e) => setImageTwo(e.target.value)}
-                  // required 
+            
                   placeholder='http://example.com'/>
                 </label>
                 <label style={{color:'white'}}>   
@@ -213,7 +212,7 @@ function UpdateASpotPage(){
                      value={imageThree}
                      className='updateUrlInpt'
                      onChange={(e) => setImageThree(e.target.value)}
-                  // required 
+              
                   placeholder='http://example.com'/>
                 </label>
                 <label style={{color:'white'}}>   
@@ -221,7 +220,7 @@ function UpdateASpotPage(){
                      value={imageFour}
                      className='updateUrlInput'
                      onChange={(e) => setImageFour(e.target.value)}
-                  // required 
+                 
                   placeholder='http://example.com'/>
                 </label>
                 </div>           

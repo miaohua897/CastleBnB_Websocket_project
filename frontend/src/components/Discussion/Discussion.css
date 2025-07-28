@@ -21,6 +21,7 @@
     font-weight: bolder;
     margin-top: 15px;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 .send-content-container{
     display: flex;
@@ -29,7 +30,6 @@
     align-items: center;
 }
 .send-content-container input{
-    /* width: 600px; */
     width:97%;
     height: 150px;
     margin: 10px;

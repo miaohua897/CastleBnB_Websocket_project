@@ -6,8 +6,8 @@ import './DeleteASpot.css';
 function DeleteASpot({spotid}){
    const dispatch=useDispatch();
    const navigate=useNavigate();
-    // if(!isDeleteASpotButtonModalOpen) return null;
-     const { closeModal } = useModal();
+    const { closeModal } = useModal();
+
     const handlerClickDelete= async()=>{
        await dispatch(thunkDeleteASpot(spotid));
         navigate('/spots/current');
@@ -22,13 +22,13 @@ function DeleteASpot({spotid}){
              <h1>Confirm Delete</h1>
             <p>Are you sure you want to remove this spot from the listings</p>
             <div className='delete-cancel-container'>
-            <button 
-            className='handle-delete-spot'
-            onClick={handlerClickDelete}> Yes (Delete Spot)
-            </button>
-            <button 
-            className='handle-cancel-button'     onClick={()=>closeModal()}>No (Keep Spot)
-            </button>
+                <button 
+                className='handle-delete-spot'
+                onClick={handlerClickDelete}> Yes (Delete Spot)
+                </button>
+                <button 
+                className='handle-cancel-button'     onClick={()=>closeModal()}>No (Keep Spot)
+                </button>
             </div>
          
         </div>  )

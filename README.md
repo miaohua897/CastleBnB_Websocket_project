@@ -1,11 +1,12 @@
 
 # Welcome to CastleBnb
 
-CastleBnb is a website that provides luxury house for users to book and review. The user can also create a spot, manage spots and reviews.
+CastleBnb is a website that provides luxury house for users to book and review. The user can also create a spot, manage spots, reviews and share their thoughts.  
+Spot and review managements are full CRUD. And the discussion feathure is written by Websocket tech.
 
 ## Live Link
 
-🏰 [CastleBnb](https://castlebnb-7e4w.onrender.com)
+🏰 [CastleBnb](https://castlebnb-websocket-project.onrender.com/)
 
 ## Tech Stack
 **Frameworks and Libraries:**     
@@ -19,7 +20,7 @@ CastleBnb is a website that provides luxury house for users to book and review. 
 [![Websocket](https://img.shields.io/badge/Socket.io-4.1.3-010101??style=flat-square&logo=Socket.io&logoColor=white)](https://www.npmjs.com/package/ws#sending-and-receiving-text-data)
 
 
-**Database:**     
+<!-- **Database:**     
 [![Sequelize](https://img.shields.io/badge/-Sequelize-52B0E7?style=flat&logo=sequelize&logoColor=white)](https://sequelize.org/)
 
 **Hosting:**    
@@ -29,24 +30,28 @@ CastleBnb is a website that provides luxury house for users to book and review. 
 ## Index
 [Database-Scheme](https://github.com/miaohua897/CastleBnb/wiki/Database-Schema#schema) |
 [Feature List](https://github.com/miaohua897/CastleBnb/wiki/Features) |
-[User Stores](https://github.com/miaohua897/CastleBnb/wiki/User-Stories) |
+[User Stores](https://github.com/miaohua897/CastleBnb/wiki/User-Stories) | -->
 
-## Landing Page
+## Landing Page  
 
-<img width="1423" alt="Screenshot 2025-03-04 at 10 54 02 AM" src="https://github.com/user-attachments/assets/788f9530-88a0-4691-b074-e8bca68aae98" />
+<img width="1339" height="684" alt="Screenshot 2025-07-26 at 6 01 09 PM" src="https://github.com/user-attachments/assets/853a5175-401d-47b9-a0a0-ce3b1bcd58e9" />  
+
+## Discussion 
+
+<img width="1340" alt="Screenshot 2025-03-19 at 3 35 11 PM" src="https://github.com/user-attachments/assets/882fb2d4-5715-401f-b211-1f2bca181c11" />   
 
 ## Spot Detail
 
-<img width="1439" alt="Screenshot 2025-03-04 at 2 53 05 PM" src="https://github.com/user-attachments/assets/7f203de2-a46e-48ec-be37-b634f7275d09" />
+<img width="1315" height="716" alt="Screenshot 2025-07-26 at 6 03 56 PM" src="https://github.com/user-attachments/assets/9e582201-162f-4e18-888d-e53899a824a3" />   
 
+## Spot Management   
 
-## Spot Management
-
-<img width="1426" alt="Screenshot 2025-03-04 at 10 54 26 AM" src="https://github.com/user-attachments/assets/47dca07a-df4f-4b98-b7a7-f6d7012fb227" />
+<img width="1350" height="524" alt="Screenshot 2025-07-26 at 6 05 27 PM" src="https://github.com/user-attachments/assets/5ece6b80-34a7-495e-98b9-de9395689164" />   
 
 ## Reviews Management
 
-<img width="1443" alt="Screenshot 2025-03-04 at 2 53 22 PM" src="https://github.com/user-attachments/assets/2372ae4e-bc5a-4133-b62b-1e0386790996" />
+<img width="1372" alt="Screenshot 2025-03-19 at 3 44 20 PM" src="https://github.com/user-attachments/assets/15fd33cc-964b-49a6-9f94-42c53970ecd7" />    
+
 
 
 

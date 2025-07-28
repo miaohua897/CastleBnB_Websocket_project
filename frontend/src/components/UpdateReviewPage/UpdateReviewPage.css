@@ -17,6 +17,7 @@
 #close-update-review-button{
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 .submit-update-review-button{
     width: 200px;
@@ -26,6 +27,7 @@
     border-radius: 10px;
     margin: 5px;
     color:white;
+    cursor: pointer;
 }
 .submit-update-review-button-disable{
     width: 200px;

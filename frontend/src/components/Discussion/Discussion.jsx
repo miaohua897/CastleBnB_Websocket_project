@@ -20,30 +20,29 @@ function Discussion() {
           connectSocket();
         }, []);
       
-          if (!sessionUser) {
-            navigate('/')
-            return ;
-          }
+        if (!sessionUser) {
+          navigate('/')
+          return ;
+        }
    
-      function connectSocket() {
-        socket.on("connection", (socket) => {
-          console.log(socket);
-        });
-      }
+        function connectSocket() {
+          socket.on("connection", (socket) => {
+            console.log(socket);
+          });
+        }
     
-      function handleInput(event) {
-        let { name, value } = event.target;
-        let currentObj = { [name]: value,'user':sessionUser.username };
+        function handleInput(event) {
+          let { name, value } = event.target;
+          let currentObj = { [name]: value,'user':sessionUser.username };
+          setMessage((prev) => ({ ...prev, ...currentObj }));
+        }
     
-        setMessage((prev) => ({ ...prev, ...currentObj }));
-      }
-    
-      function sendMessages() {
-        socket.emit("messages", message);
-        socket.on("allMessages", (allMessages) => {
-          setMessages(allMessages);
-        });
-      }
+        function sendMessages() {
+          socket.emit("messages", message);
+          socket.on("allMessages", (allMessages) => {
+            setMessages(allMessages);
+          });
+        }
 
       return (
         <>
