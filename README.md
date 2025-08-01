@@ -22,7 +22,7 @@ Spot and review managements are full CRUD. And the discussion feathure is writte
 
 ## Vue-Example Code Link       
 
-[vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)[vue-code-example](https://github.com/miaohua897/CastleBnB_Websocket_project/tree/vue-frontend)        
+![vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)[vue-code-example](https://github.com/miaohua897/CastleBnB_Websocket_project/tree/vue-frontend)        
     
 <!-- **Database:**     
 [![Sequelize](https://img.shields.io/badge/-Sequelize-52B0E7?style=flat&logo=sequelize&logoColor=white)](https://sequelize.org/)
