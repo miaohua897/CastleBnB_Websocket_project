@@ -1,38 +1,25 @@
 
 <template>
   <nav >
-    <div class ='nav-container'>
-      <router-link to="/" class="home-link">
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="black"
-    >
-      <path :d="mdiHome" />
-    </svg>
+      <div class ='nav-container'>
+        <router-link to="/" class="home-link">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="black"> <path :d="mdiHome" /></svg>
 
-  </router-link>
-      <div class="menu-container"  ref="menuRef">
-
-    <div class="menu-icon" @click="toggleDropdown">
-      <SvgIcon type="mdi" :path="mdiMenu" :size="28" />
-    </div>
-
-
-    <ul v-if="dropdownOpen" class="dropdown">
-      <template v-if="!auth">
-        <li><router-link to="/login" class="dropdown-btn">Login</router-link></li>
-        <li><router-link to="/register"  class="dropdown-btn">Register</router-link></li>
-      </template>
-      <template v-else>
-        <li><a href="#" @click.prevent="logout">Logout</a></li>
-      </template>
-    </ul>
-  </div>
-
-    </div>
-  </nav>
+        </router-link>
+        <div class="menu-container"  ref="menuRef">
+          <div class="menu-icon" @click="toggleDropdown"><SvgIcon type="mdi" :path="mdiMenu" :size="28" /></div>
+            <ul v-if="dropdownOpen" class="dropdown">
+              <template v-if="!auth">
+                <li><router-link to="/login" class="dropdown-btn">Login</router-link></li>
+                <li><router-link to="/register"  class="dropdown-btn">Register</router-link></li>
+              </template>
+              <template v-else>
+                <li><a href="#" @click.prevent="logout">Logout</a></li>
+              </template>
+            </ul>
+          </div>
+        </div>
+    </nav>
 </template>
 
 <script setup lang="ts">
@@ -43,7 +30,6 @@ import { mdiMenu } from "@mdi/js";
 import { mdiHome } from '@mdi/js'
 
 const store = useStore()
-
 const auth = computed(() => store.state.authenticated)
 const dropdownOpen = ref(false);
 const menuRef =ref(null)

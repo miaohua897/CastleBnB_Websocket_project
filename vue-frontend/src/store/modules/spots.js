@@ -2,9 +2,7 @@
 const state =()=>({
     all:[]
 })
-
 const getters={}
-
 const actions={
     async getAllSpots ({commit}){
         const res = await fetch(`/api/spots`)
