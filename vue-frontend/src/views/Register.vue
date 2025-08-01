@@ -9,7 +9,7 @@
       <p v-if="errors.firstName" style="color: red">{{ errors.firstName }}</p>
 
     <input v-model="data.lastName" placeholder="lastName"  class="register-input" required>
-          <p v-if="errors.lastName" style="color: red">{{ errors.lastName }}</p>
+      <p v-if="errors.lastName" style="color: red">{{ errors.lastName }}</p>
 
     <input v-model="data.email" type="email" placeholder="Email" class="register-input"  required>
       <p v-if="errors.email" style="color: red">{{ errors.email }}</p>
@@ -38,7 +38,7 @@ export default {
     });
 
     const errors = reactive({
-       username: '',
+      username: '',
       email: '',
       password: '',
       firstName:'',
@@ -66,10 +66,10 @@ export default {
       });
       if(!res.ok){
         const data = await res.json()
-        errors.username = data.errors.username||''
-        errors.firstName = data.errors.firstName||''
-        errors.lastName = data.errors.lastName||''
-        errors.email =data.errors.email||''
+        errors.username = 'please check username'
+        errors.firstName = 'please check first name'
+        errors.lastName = 'please check last name'
+        errors.email = 'please check email address'
 
       }else{
            await router.push('/login');
