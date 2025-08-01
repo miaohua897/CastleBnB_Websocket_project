@@ -1,0 +1,9 @@
+<h1>Welcome to CastleBnb Angular Example</h1>
+<div *ngIf="spotData.length !== 0" class="spots-cards-wrapper" >
+  <div *ngFor="let spot of spotData" class="spots-cards">
+        <div class="card-info">
+            <img [ngSrc]="spot.previewImage.url"   class="spot-img"   width="400" height="300" priority ngOptimizedImage/>
+            <p>{{spot.name}}</p>
+        </div>
+  </div>
+</div>
