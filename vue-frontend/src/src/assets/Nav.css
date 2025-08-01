@@ -1,0 +1,32 @@
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.menu-container {
+  position: relative;
+  display: inline-block;
+}
+.menu-icon {
+  cursor: pointer;
+  padding: 4px;
+}
+.dropdown {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  list-style: none;
+}
+.dropdown li {
+  margin: 0.3rem 0;
+}
+.dropdown-btn{
+  text-decoration: none;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+}
