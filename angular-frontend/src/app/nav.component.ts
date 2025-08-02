@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 
 /**
@@ -20,4 +21,9 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: 'nav.component.html',
   styleUrls: ['nav.component.css'],
 })
-export class  navComponent{}
+export class  navComponent{
+    constructor(private router: Router){}
+    goToLogin(){
+        this.router.navigate(['/login'])
+    }
+}
