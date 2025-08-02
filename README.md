@@ -20,6 +20,23 @@ Spot and review managements are full CRUD. And the discussion feathure is writte
 [![Websocket](https://img.shields.io/badge/Socket.io-4.1.3-010101??style=flat-square&logo=Socket.io&logoColor=white)](https://www.npmjs.com/package/ws#sending-and-receiving-text-data)
 
 
+## Vue-Example Code Link        
+
+![vue](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)          
+
+🏰 [vue-code-example](https://github.com/miaohua897/CastleBnB_Websocket_project/tree/vue-frontend) 
+    
+🏰 [vue-live-link] (https://castlebnb-vue.onrender.com)     
+
+
+## Angular-Example Code Link        
+
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)          
+
+🏰 [Angular-code-example](https://github.com/miaohua897/CastleBnB_Websocket_project/tree/angular-frontend)   
+    
+🏰 [Angular-live-link] (https://castlebnb-angular.onrender.com/)    
+
 <!-- **Database:**     
 [![Sequelize](https://img.shields.io/badge/-Sequelize-52B0E7?style=flat&logo=sequelize&logoColor=white)](https://sequelize.org/)
 
