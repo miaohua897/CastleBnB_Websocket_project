@@ -21,9 +21,9 @@ function Navigation() {
             <button  className='discussion-nav-button'  onClick={()=>navigate('/discussion')}>Discussion</button>
           </div>:null
         }
-      <li>
+      <div>
         <ProfileButton className='profile-buttons-container' />
-      </li>
+      </div>
 
       </div>
    
