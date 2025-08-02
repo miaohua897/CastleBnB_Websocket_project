@@ -24,6 +24,6 @@ import { Router } from '@angular/router';
 export class  navComponent{
     constructor(private router: Router){}
     goToLogin(){
-        this.router.navigate(['/login'])
+        // this.router.navigate(['/login'])
     }
 }
