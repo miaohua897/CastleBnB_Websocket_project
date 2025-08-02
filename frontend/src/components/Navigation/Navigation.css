@@ -71,7 +71,7 @@ border: 2px solid rgb(243, 96, 96);
 .profile-button{
     background-color:white; 
     border: none;
-    font-size: 18px;
+    /* font-size: 18px; */
     margin-top: 3px;
     cursor: pointer;
 }
